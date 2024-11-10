@@ -43,6 +43,29 @@ body {
     padding: 4px 8px;
     font-size: 0.8rem;
 }
+/* Estilos de filtro y buscador */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.8rem 1rem;
+    gap: 0.5rem;
+}
+
+.search-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.search input, 
+.filter select {
+    border-radius: 8px;
+    padding: 0.5rem 0.8rem;
+    width: 100%;
+}
+
+/*Estilos para las card de los productos*/
+
 
 /* Media querie para tablet */
 @media (min-width: 768px) {
@@ -51,6 +74,22 @@ body {
     .cart-icon img {
         width: 40px;
         height: 40px;
+    }
+
+    .main-container {
+        gap: 1rem;
+    }
+
+    .search-filter {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .search input, 
+    .filter select {
+        width: auto;
     }
 }
 
