@@ -23,6 +23,7 @@
 
     <!-- Buscador y cards-->
     <main class="main-container">
+        <!-- Buscador y filtro -->
         <section class="search-filter">
             <div class="search">
                 <input type="search" id="search" placeholder="Buscar productos..." />
@@ -30,58 +31,60 @@
             <div class="filter">
                 <select id="category-filter">
                     <option value="" disabled selected>Todas las categorías</option>
-                    <option value="dairy">Lácteos</option>
-                    <option value="fruits">Frutas</option>
+                    <option value="dairy">Dairy</option>
+                    <option value="vegetables">Vegetables</option>
+                    <option value="seafood">Seafood</option>
                 </select>
             </div>
-
         </section>
 
-        <section class="product">
-            <img src="" alt="Eggs">
-            <div class="card-info">
-                <h2 class="product-title">Eggs</h2>
-                <p class="product-description">Fresh eggs, a versatile ingredient for baking, cooking, or breakfast.</p>
-                <p class="product-category">Categorías:
-                    <span>dairy</span>
-                </p>
-                <p class="product-price">Precio: 
-                    <span>S/ 2.99</span>
-                </p>
-            </div>
-            <button class="add-to-cart-btn">Agregar al carrito</button>
-        </section>
+        <!-- Contenedor de productos -->
+        <section class="product-container">
+            <section class="product">
+                <img src="" alt="Eggs">
+                <div class="card-info">
+                    <h2 class="product-title">Eggs</h2>
+                    <p class="product-description">Fresh eggs, a versatile ingredient for baking, cooking, or breakfast.</p>
+                    <p class="product-category">Categorías:
+                        <span>dairy</span>
+                    </p>
+                    <p class="product-price">Precio: 
+                        <span>S/ 2.99</span>
+                    </p>
+                </div>
+                <button class="add-to-cart-btn">Agregar al carrito</button>
+            </section>
 
-        <section class="product">
-            <img src="" alt="Fish Steak">
-            <div class="card-info">
-                <h2 class="product-title">Fish Steak</h2>
-                <p class="product-description">Quality fish steak, suitable for grilling, baking, or pan-searing.</p>
-                <p class="product-category">Categorías:
-                    <span>seafood</span>
-                </p>
-                <p class="product-price">Precio: 
-                    <span>S/ 14.99</span>
-                </p>
-            </div>
-            <button class="add-to-cart-btn">Agregar al carrito</button>
-        </section>
+            <section class="product">
+                <img src="" alt="Fish Steak">
+                <div class="card-info">
+                    <h2 class="product-title">Fish Steak</h2>
+                    <p class="product-description">Quality fish steak, suitable for grilling, baking, or pan-searing.</p>
+                    <p class="product-category">Categorías:
+                        <span>seafood</span>
+                    </p>
+                    <p class="product-price">Precio: 
+                        <span>S/ 14.99</span>
+                    </p>
+                </div>
+                <button class="add-to-cart-btn">Agregar al carrito</button>
+            </section>
 
-        <section class="product"> 
-            <img src="" alt="Green Bell Pepper">
-            <div class="card-info">
-                <h2 class="product-title">Green Bell Pepper</h2>
-                <p class="product-description">Fresh and vibrant green bell pepper, perfect for adding color and flavor to your dishes.</p>
-                <p>Categorías: 
-                    <span>vegetables</span>
-                </p>
-                <p class="product-price">Precio: 
-                    <span>S/ 1.29</span>
-                </p> 
-            </div>
-            <button class="add-to-cart-btn">Agregar al carrito</button>
+            <section class="product"> 
+                <img src="" alt="Green Bell Pepper">
+                <div class="card-info">
+                    <h2 class="product-title">Green Bell Pepper</h2>
+                    <p class="product-description">Fresh and vibrant green bell pepper, perfect for adding color and flavor to your dishes.</p>
+                    <p>Categorías: 
+                        <span>vegetables</span>
+                    </p>
+                    <p class="product-price">Precio: 
+                        <span>S/ 1.29</span>
+                    </p> 
+                </div>
+                <button class="add-to-cart-btn">Agregar al carrito</button>
+            </section>
         </section>
-
     </main>
 
     <!-- Footer -->
