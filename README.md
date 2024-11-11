@@ -26,6 +26,7 @@ BOOTCAMP-FRONTEND-REACT-NTT/
 │   ├── index.html
 │   └── style.css
 └── README.md
+```
 
 ## Cómo clonar el proyecto
 
@@ -42,6 +43,7 @@ Para descargar este repositorio, primero clona el repositorio en tu máquina loc
 ```bash
     git branch -a (Para traer todas las ramas del repositorio)
     git checkout feature/diseños-y-estilos / git switch feature/diseños-y-estilos
+  ```
 
 ¡Y listo! 
 
