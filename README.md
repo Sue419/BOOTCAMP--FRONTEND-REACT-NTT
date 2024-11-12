@@ -49,7 +49,7 @@ Para descargar este repositorio, primero clona el repositorio en tu máquina loc
 
 ## Capturas de Pantalla 
 ### Vista Móvil
-![Vista Móvil](assets/screenshots/mobile-view.png)
+![Vista Móvil](.assets/screenshots/mobile-view.png)
 
 ### Vista de Tableta
 ![Vista de Tableta](assets/screenshots/tablet-view.png)
