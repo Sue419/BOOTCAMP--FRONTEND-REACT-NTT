@@ -1,16 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-* {
-    font-family: "Poppins", sans-serif;
-    box-sizing: border-box;
+
+:root {
+    --color-primary: #233D75;
+    --color-secondary: #FF8C00;
+    --color-accent: #EB4E00;
+
+    /*background*/
+    --color-bg-light: #FCFCFC;
+    --color-bg-medium: #F8F8F9;
+
+    /*Colores para texto*/
+    --color-text-primary: #2D2D2D;
+    --color-text-secondary: #9E9E9E;
+    --color-text-light: #FCFCFC;
+
+    /*bordes*/
+    --color-border: #DDDDDD; 
 }
-body {
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+body {
     display: flex; 
     flex-direction: column; 
     height: 100vh;
     font-size: 16px;
-    background-color: #FCFCFC;
+    background-color: var(--color-bg-light);
+    font-family: "Poppins", sans-serif;
 }
 
 /* Estilos header*/
@@ -18,7 +37,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    background-color: #FCFCFC;
+    background-color: var(--color-bg-light);
     padding: 0.5rem 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
@@ -35,7 +54,7 @@ body {
 
 .logo h1 {
     font-size: 2rem;
-    color: #233D75;
+    color: var(--color-primary);
     margin: 0 0.5rem;
 }
 
@@ -56,8 +75,8 @@ body {
     position: absolute;
     top: -10px;
     right: -10px;
-    background-color: #EB4E00;
-    color: #FCFCFC;
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
     border-radius: 50%;
     padding: 3px 8px;
     font-size: 0.7rem;
@@ -73,7 +92,6 @@ body {
 .main-container {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
     gap: 1rem;
 }
 
@@ -98,7 +116,7 @@ body {
 
 .search input {
     padding: 0.5rem 0.8rem;
-    border: 1px solid #dddddd;
+    border: 1px solid var(--color-border);
     border-right: none;
     border-radius: 12px 0 0 12px;
     width: 100%;
@@ -107,9 +125,9 @@ body {
 
 .search-button {
     padding: 0.5rem 0.8rem;
-    border: 1px solid #dddddd;
+    border: 1px solid var(--color-border);
     border-radius: 0 12px 12px 0;
-    background-color: #233D75;
+    background-color: var(--color-primary);
     cursor: pointer;
 }
 
@@ -118,13 +136,9 @@ body {
     height: auto;
 }
 
-.search-button:hover {
-    background-color: #EB4E00;
-}
-
 .filter select {
     height: 40px;
-    border: 1px solid #dddddd;
+    border: 1px solid var(--color-border);
     border-radius: 12px;
     width: 100%;
     outline: none;
@@ -136,18 +150,19 @@ body {
     gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     justify-items: center;
+    padding: 1rem;
 }
 
 .product {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid #dddddd;
+    border: 1px solid --color-border;
     padding: 1rem;
     border-radius: 24px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #F8F8F9;
+    background-color: var(--color-bg-medium);
     gap: 1rem;
 }
 
@@ -180,18 +195,18 @@ body {
 .product-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #2D2D2D;
+    color: var(--color-text-primary);
 }
 
 .product-category {
     font-size: 1rem;
-    color: #9E9E9E;
+    color: var(--color-text-secondary);
 }
 
 .product-category span {
     font-size: 1rem;
-    color: #FCFCFC;
-    background-color: #233D75;
+    color: var(--color-text-light);
+    background-color: var(--color-primary);
     padding: 0.3rem 0.6rem;
     border-radius: 16px;
     cursor: pointer;
@@ -200,13 +215,13 @@ body {
 .product-price {
     font-size: 1.2rem;
     font-weight: 700;
-    color: #EB4E00;
+    color: var(--color-accent);
 }
 
 .product-price span {
     font-size: 2rem;
     font-weight: 700;
-    color: #EB4E00;
+    color: var(--color-accent);
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
 }
@@ -215,8 +230,8 @@ body {
     position: relative;
     width: 100%;
     padding: 0.8rem;
-    background-color: #233D75;
-    color: #FCFCFC;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
     border: none;
     border-radius: 16px;
     cursor: pointer;
@@ -252,8 +267,8 @@ body {
 
 /* Estilos para el Footer */
 .footer-container {
-    background-color: #233D75;
-    color: #FCFCFC;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
     margin: 0 1rem;
     padding: 2rem 1rem 1rem;
     text-align: center;
@@ -322,7 +337,7 @@ body {
 
 .footer-links a:hover {
     text-decoration: underline;
-    color: #FF8C00;
+    color: var(--color-secondary);
 }
 
 .footer-social-media {
@@ -350,9 +365,9 @@ body {
 
 .footer-copy {
     font-size: 0.8rem;
-    color: #FCFCFC;
+    color: var(--color-text-light);
     margin-top: 1.5rem;
-    border-top: 1px solid #FCFCFC;
+    border-top: 1px solid var(--color-border);
     padding-top: 1rem;
 }
 
@@ -411,6 +426,10 @@ body {
     }
 }
 
+.desktop-search {
+    display: none;
+}
+
 /* Media querie para desktop */
 @media (min-width: 1024px) {
 
@@ -429,9 +448,16 @@ body {
     }
 
     .header-container,
-    .main-container {
+    .product-container {
         padding-left: 4rem;
         padding-right: 4rem;
+    }
+
+    .desktop-search {
+        display: inline-flex;
+    }
+    .mobile-search {
+        display: none;
     }
 
     .product-container {
@@ -464,3 +490,4 @@ body {
         font-size: 1rem;
     }
 }
+
