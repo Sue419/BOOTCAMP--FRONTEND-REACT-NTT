@@ -18,6 +18,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    /* los colores deben estar en variables para reutilizarlos */
     background-color: #FCFCFC;
     padding: 0.5rem 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -124,6 +125,7 @@ body {
 
 .filter select {
     height: 40px;
+    /* los colores deben estar en variables para reutilizarlos */
     border: 1px solid #dddddd;
     border-radius: 12px;
     width: 100%;
@@ -142,6 +144,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* los colores deben estar en variables para reutilizarlos */
     border: 1px solid #dddddd;
     padding: 1rem;
     border-radius: 24px;
@@ -200,12 +203,14 @@ body {
 .product-price {
     font-size: 1.2rem;
     font-weight: 700;
+    /* los colores deben estar en variables para reutilizarlos */
     color: #EB4E00;
 }
 
 .product-price span {
     font-size: 2rem;
     font-weight: 700;
+    /* los colores deben estar en variables para reutilizarlos */
     color: #EB4E00;
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
@@ -215,6 +220,7 @@ body {
     position: relative;
     width: 100%;
     padding: 0.8rem;
+    /* los colores deben estar en variables para reutilizarlos */
     background-color: #233D75;
     color: #FCFCFC;
     border: none;
@@ -252,6 +258,7 @@ body {
 
 /* Estilos para el Footer */
 .footer-container {
+    /* los colores deben estar en variables para reutilizarlos */
     background-color: #233D75;
     color: #FCFCFC;
     margin: 0 1rem;
@@ -316,12 +323,14 @@ body {
 }
 
 .footer-links a {
+    /* los colores deben estar en variables para reutilizarlos */
     color: #FCFCFC;
     text-decoration: none;
 }
 
 .footer-links a:hover {
     text-decoration: underline;
+    /* los colores deben estar en variables para reutilizarlos */
     color: #FF8C00;
 }
 
