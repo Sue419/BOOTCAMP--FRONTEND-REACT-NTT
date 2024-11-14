@@ -11,31 +11,47 @@
 <body>
     <!--Header-->
     <header class="header-container">
-        <div class="logo">
-            <img src="../assets/images/logo/logo.svg" alt="Logo">
-            <h1>My Market</h1>
-        </div>
-        <div class="icons">
-            <div class="cart-icon">
-                <img src="../assets/icons/cart-shopping.svg" alt="Carro de compras">
-                <span>0</span>
+        <div class="header-top">
+            <div class="logo">
+                <img src="../assets/images/logo/logo.svg" alt="Logo">
+                <h1>My Market</h1>
             </div>
-            <div class="user-icon">
-                <img src="../assets/icons/user.svg" alt="Usuario">
+            <!--Contenedor para buscador v. desktop y los íconos-->
+            <div class="search-and-icons">
+                <div class="search desktop-search">
+                    <input type="search" id="search" placeholder="Buscar productos..." />
+                    <button class="search-button" type="button">
+                        <img src="../assets/icons/magnifying_glass.svg" alt="Buscar">
+                    </button>
+                </div>
+                <div class="icons">
+                    <div class="cart-icon">
+                        <img src="../assets/icons/cart-shopping.svg" alt="Carro de compras">
+                        <span>0</span>
+                    </div>
+                    <div class="user-icon">
+                        <img src="../assets/icons/user.svg" alt="Usuario">
+                    </div>
+                </div>
             </div>
         </div>
+        
+        <!--Buscador v. mobile -->
+        <div class="search mobile-search">
+            <input type="search" id="search" placeholder="Buscar productos..." />
+            <button class="search-button" type="button">
+                <img src="../assets/icons/magnifying_glass.svg" alt="Buscar">
+            </button>
+        </div>
+        
+        
     </header>
 
     <!-- Buscador y cards-->
     <main class="main-container">
-        <!-- Buscador y filtro -->
+        <!-- Filtro por categoría-->
         <section class="search-filter">
-            <div class="search">
-                <input type="search" id="search" placeholder="Buscar productos..." />
-                <button class="search-button" type="button">
-                    <img src="../assets/icons/magnifying_glass.svg" alt="Buscar">
-                </button>
-            </div>
+            
             <div class="filter">
                 <select id="category-filter">
                     <option value="" disabled selected>Todas las categorías</option>
