@@ -35,11 +35,17 @@ body {
 /* Estilos header*/
 .header-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: baseline;
     background-color: var(--color-bg-light);
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    gap: .5rem;
+}
+.header-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
 }
 
 .logo {
@@ -88,6 +94,11 @@ body {
     cursor: pointer;
 }
 
+.cart-icon, 
+.user-icon {
+    display: flex;
+    align-self: center;
+}
 /* Estilos de filtro y buscador */
 .main-container {
     display: flex;
@@ -99,13 +110,13 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
 }
 
 .search input,
 .filter select {
-    border-radius: 12px;
     padding: 0.5rem 0.8rem;
-    width: 100%;
 }
 
 .search {
@@ -136,6 +147,9 @@ body {
     height: auto;
 }
 
+.filter {
+    width: 100%;
+}
 .filter select {
     height: 40px;
     border: 1px solid var(--color-border);
@@ -378,6 +392,10 @@ body {
 /* Media querie para tablet */
 @media (min-width: 768px) {
 
+    .header-container{
+        padding: 1.2rem 1rem;
+    }
+
     .logo img,
     .cart-icon img,
     .user-icon img {
@@ -399,7 +417,7 @@ body {
 
     .search input,
     .filter select {
-        width: auto;
+        width: 100%;
     }
 
     .footer-content {
@@ -448,13 +466,23 @@ body {
     }
 
     .header-container,
-    .product-container {
+    .product-container,
+    .search-filter {
         padding-left: 4rem;
         padding-right: 4rem;
     }
 
+    .search-and-icons {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        width: 50%;
+        justify-content: flex-end;
+    }
+
     .desktop-search {
         display: inline-flex;
+        width: 100%;
     }
     .mobile-search {
         display: none;
