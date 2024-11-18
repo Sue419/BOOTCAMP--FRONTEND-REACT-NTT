@@ -1,9 +1,9 @@
-import { fetchCategories } from "./api/fetchCategories.js";
-import { fetchProducts } from "./api/fetchProducts.js";
-import { renderCategoryFilter } from "./js/renderCategoryFilter";
-import { updateProductCards } from "./js/updateProductCard.js";
-import { searchProducts } from "./js/search";
-import { addToCart } from "./js/cart";
+import { fetchCategories } from "./api/fetchCategories.ts";
+import { fetchProducts } from "./api/fetchProducts.ts";
+import { renderCategoryFilter } from "./js/renderCategoryFilter.ts";
+import { updateProductCards } from "./js/updateProductCard.ts";
+import { searchProducts } from "./js/search.ts";
+import { addToCart } from "./js/cart.ts";
 
 const categoryFilter = document.querySelector('#category-filter');
 const searchInputDesktop = document.querySelector('#desktop-search');
