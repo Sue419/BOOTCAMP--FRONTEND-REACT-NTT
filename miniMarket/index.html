@@ -17,24 +17,24 @@
     <header class="header-container">
         <div class="header-top">
             <div class="logo">
-                <img src="../assets/images/logo/logo.svg" alt="Logo">
+                <img src="./src/assets/images/logo/logo.svg" alt="Logo">
                 <h1>My Market</h1>
             </div>
             <!--Contenedor para buscador v. desktop y los íconos-->
             <div class="search-and-icons">
                 <div class="search desktop-search">
-                    <input type="search" id="search" placeholder="Buscar productos..." />
+                    <input type="search" id="desktop-search" placeholder="Buscar productos..." />
                     <button class="search-button" type="button">
-                        <img src="../assets/icons/magnifying_glass.svg" alt="Buscar">
+                        <img src="./src/assets/icons/magnifying_glass.svg" alt="Buscar">
                     </button>
                 </div>
                 <div class="icons">
                     <div class="cart-icon">
-                        <img src="../assets/icons/cart-shopping.svg" alt="Carro de compras">
+                        <img src="./src/assets/icons/cart-shopping.svg" alt="Carro de compras">
                         <span>0</span>
                     </div>
                     <div class="user-icon">
-                        <img src="../assets/icons/user.svg" alt="Usuario">
+                        <img src="./src/assets/icons/user.svg" alt="Usuario">
                     </div>
                 </div>
             </div>
@@ -42,33 +42,37 @@
         
         <!--Buscador v. mobile -->
         <div class="search mobile-search">
-            <input type="search" id="search" placeholder="Buscar productos..." />
+            <input type="search" id="mobile-search" placeholder="Buscar productos..." />
             <button class="search-button" type="button">
-                <img src="../assets/icons/magnifying_glass.svg" alt="Buscar">
+                <img src="./src/assets/icons/magnifying_glass.svg" alt="Buscar">
             </button>
         </div>
         
+        <div class="header-bottom">
+            <!-- Filtro por categoría-->
+            <section class="search-filter">
+                
+                <div class="filter">
+                    <select id="category-filter">
+                        <option value="" disabled selected>Todas las categorías</option>
+                        <option value="dairy">Dairy</option>
+                        <option value="vegetables">Vegetables</option>
+                        <option value="seafood">Seafood</option>
+                    </select>
+                </div>
+            </section>
+
+        </div>
         
     </header>
 
     <!-- Buscador y cards-->
     <main class="main-container">
-        <!-- Filtro por categoría-->
-        <section class="search-filter">
-            
-            <div class="filter">
-                <select id="category-filter">
-                    <option value="" disabled selected>Todas las categorías</option>
-                    <option value="dairy">Dairy</option>
-                    <option value="vegetables">Vegetables</option>
-                    <option value="seafood">Seafood</option>
-                </select>
-            </div>
-        </section>
 
         <!-- Contenedor de productos -->
         <section class="product-container">
-            <article class="product">
+            <!--Cards generadas de forma dinámica-->
+            <!-- <article class="product">
                 <img src="../assets/images/products/eggs.jpg" alt="Eggs">
                 <div class="card-info">
                     <h2 class="product-title">Eggs</h2>
@@ -108,28 +112,7 @@
                         <img src="../assets/icons/cart-shopping_white.svg" alt="Cart Icon">
                     </div>
                 </button>
-            </article>
-
-            <article class="product">
-                <img src="../assets/images/products/green_bell_peppers.jpg" alt="Green Bell Pepper">
-                <div class="card-info">
-                    <h2 class="product-title">Green Bell Pepper</h2>
-                    <p class="product-description">Fresh and vibrant green bell pepper, perfect for adding color and
-                        flavor to your dishes.</p>
-                    <p class="product-category">
-                        <span>vegetables</span>
-                    </p>
-                    <p class="product-price">Precio:
-                        <span>S/ 1.29</span>
-                    </p>
-                </div>
-                <button class="add-to-cart-btn">
-                    Añadir al carrito
-                    <div class="cart-icon_btn">
-                        <img src="../assets/icons/cart-shopping_white.svg" alt="Cart Icon">
-                    </div>
-                </button>
-            </article>
+            </article>-->
         </section>
     </main>
 
@@ -139,7 +122,7 @@
             <!-- Logo y descripción-->
             <div class="footer-logo-content">
                 <div class="footer-logo">
-                    <img src="../assets/images/logo/white_logo.svg" alt="Logo de My Market">
+                    <img src="./src/assets/images/logo/white_logo.svg" alt="Logo de My Market">
                     <h2>My Market</h2>
                 </div>
                 <p>Calidad siempre a tu alcance</p>
@@ -160,13 +143,13 @@
                 <h3>Síguenos en nuestras redes sociales</h3>
                 <div class="social-media">
                     <a href="#" aria-label="Síguenos en X" alt="Logo de X">
-                        <img src="../assets/icons/x_twitter.svg" alt="Twitter">
+                        <img src="./src/assets/icons/x_twitter.svg" alt="Twitter">
                     </a>
                     <a href="#" aria-label="Síguenos en Instagram" alt="Logo de Instagram">
-                        <img src="../assets/icons/instagram.svg" alt="Instagram">
+                        <img src="./src/assets/icons/instagram.svg" alt="Instagram">
                     </a>
                     <a href="#" aria-label="Síguenos en TikTok" alt="Logo de TikTok">
-                        <img src="../assets/icons/tiktok.svg" alt="TikTok">
+                        <img src="./src/assets/icons/tiktok.svg" alt="TikTok">
                     </a>
                 </div>
             </section>
