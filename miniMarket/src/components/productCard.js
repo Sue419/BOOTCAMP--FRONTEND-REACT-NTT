@@ -32,7 +32,7 @@ const createImageContainer = (product) => {
     contentProductImage.classList.add('product-image');
     
     const productImage = document.createElement('img');
-    productImage.src = product.thumbnail;
+    productImage.src = product.image;
     productImage.alt = product.title;
     
     contentProductImage.appendChild(productImage);

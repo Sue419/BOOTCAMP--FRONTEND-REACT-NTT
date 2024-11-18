@@ -10,6 +10,6 @@ export const mapperGetProducts = (product) => {
         tags: product.tags || [],
         brand: product.brand,
         availabilityStatus: product.availabilityStatus,
-        thumbnail: product.thumbnail,
+        image: product.image || product.thumbnail,
     };
 };
