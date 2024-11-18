@@ -1,5 +1,5 @@
-import { fetchCategories } from "./js/fetchCategories";
-import { fetchProducts } from "./js/fetchProducts";
+import { fetchCategories } from "./api/fetchCategories.js";
+import { fetchProducts } from "./api/fetchProducts.js";
 import { renderCategoryFilter } from "./js/renderCategoryFilter";
 import { updateProductCards } from "./js/updateProductCard.js";
 import { searchProducts } from "./js/search";
