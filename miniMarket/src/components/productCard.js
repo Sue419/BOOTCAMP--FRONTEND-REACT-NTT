@@ -1,22 +1,23 @@
-import { truncateText } from "../utils/truncateText";
+import { truncateText } from "../utils/truncateText"; 
+import { calculateDiscountedPrice } from "../utils/discount";
 
 export const createProductCard = (product) => {
     const productCard = document.createElement('article');
     productCard.classList.add('product');
 
-    //Imagen
+    // Imagen
     const contentProductImage = createImageContainer(product);
   
-    //Información
+    // Información
     const cardInfo = createCardInfo(product);
   
-    //Precio
+    // Precio
     const productPrice = createCardPrice(product);
   
-    //Botón
+    // Botón
     const addToCartButton = createAddToCartButton();
   
-    //Orden
+    // Orden
     productCard.appendChild(contentProductImage);
     productCard.appendChild(cardInfo);
     productCard.appendChild(productPrice);
@@ -74,24 +75,38 @@ const createCardInfo = (product) => {
     return cardInfo;
 };
 
+// Precio del producto (precio original y con descuento)
 const createCardPrice = (product) => { 
-    const productPrice = document.createElement('p');
+    const productPrice = document.createElement('div');
     productPrice.classList.add('product-price');
-    productPrice.textContent = `Price:`;
 
-    const productAmountPrice = document.createElement('span');
-    productAmountPrice.classList.add('product-price');
-    productAmountPrice.textContent = `$ ${product.price}`;
+    // Precio original
+    const originalPrice = document.createElement('p');
+    originalPrice.classList.add('product-original-price');
+    originalPrice.textContent = `Precio: $ ${product.price.toFixed(2)}`;
 
-    productPrice.appendChild(productAmountPrice);
+    // Precio con descuento
+    const discountedPrice = document.createElement('p');
+    discountedPrice.classList.add('product-discounted-price');
+    discountedPrice.textContent = `Precio (-${product.discountPercentage}%): `;
+    
+    const finalPrice = document.createElement('span');
+    finalPrice.classList.add('final-price');
+    finalPrice.textContent = `$ ${calculateDiscountedPrice(product.price, product.discountPercentage)}`;
+
+    //
+    productPrice.appendChild(originalPrice);
+    productPrice.appendChild(discountedPrice);
+    discountedPrice.appendChild(finalPrice);
+
     return productPrice;
-}
+};
 
-//Botón de añadir al carrito
+// Botón de añadir al carrito
 const createAddToCartButton = () => {
     const addToCartButton = document.createElement('button');
     addToCartButton.classList.add('add-to-cart-btn');
-    addToCartButton.textContent = `Add to cart`;
+    addToCartButton.textContent = `Añadir al carrito`;
 
     const cartIcon = document.createElement('div');
     cartIcon.classList.add('cart-icon_btn');
@@ -103,4 +118,3 @@ const createAddToCartButton = () => {
     addToCartButton.appendChild(cartIcon);
     return addToCartButton;
 };
-
