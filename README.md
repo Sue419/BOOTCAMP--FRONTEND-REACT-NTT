@@ -1,40 +1,65 @@
 # BOOTCAMP-FRONTEND-REACT-NTT
 
-¡Hola! Este proyecto es un trabajo de diseño y maquetación de un marketplace completamente responsivo, siguiendo el enfoque "mobile-first". Todo esto lo he hecho con HTML5 y CSS3.
+¡Hola! Este proyecto es una tienda en línea dinámica que consume la API de DummyJSON para cargar productos y categorías. Está diseñado con un enfoque mobile-first y utiliza JavaScript Vanilla para la interactividad.
 
 ## Características:
-- **Diseño Mobile-First**: Este proyecto está hecho pensando primero en dispositivos móviles, y luego se adapta a pantallas más grandes como tabletas y laptops.
-- **HTML5 & CSS3**: Se utilizó solo HTML5 para la estructura y CSS3 para los estilos.
-- **Diseño Responsivo**: Se trabajó con `media queries` para trabajar el diseño y que se adapte automáticamente a diferentes tamaños de pantalla.
-- **Estructura de carpetas del proyecto**:
-  - `assets/`: Se guardan todas las imágenes e íconos utilizados en el proyecto.
-    - `images/`: Dentro de esta carpeta, encontrarás subcarpetas como `logo/` (para el logo) y `products/` (para las imágenes de productos).
-    - `icons/`: Donde guardo los íconos utilizados en todo el diseño.
-  - `src/`: Aquí están los archivos principales del proyecto:
-    - `index.html`: La estructura HTML de todo el sitio.
-    - `style.css`: Hoja de estilos personalizados de este proyecto.
+- **Diseño Mobile-First**: El proyecto está optimizado para dispositivos móviles y luego se adapta a pantallas más grandes.
+- **Carga dinámica de productos**: Los productos se cargan desde la API DummyJSON.
+- **Filtrado en tiempo real**: Los productos pueden filtrarse mediante búsqueda por texto y categorías.
+- **Carrito de compras**: Los productos agregados al carrito aumentan el contador del carrito en el menú superior.
+- **API para productos y categorías**: Uso de `fetch`, `async` y `await` para consumir la API y mostrar los datos sin librerías externas.
+- **Descuento en productos**: Los productos muestran el precio original junto con el descuento aplicado.
+- **Textos truncos**: Se aplican funciones de truncado a textos largos para mejorar la presentación.
 
 ## Estructura del Proyecto:
+
 ```bash
-BOOTCAMP-FRONTEND-REACT-NTT/
-├── assets/
-│   ├── images/
-│   │   ├── logo/
-│   │   └── products/
-│   └── icon/
+miniMarket/
+├── public/
+│   └── vite.svg
 ├── src/
-│   ├── index.html
-│   └── style.css
-└── README.md
-```
+│   ├── assets/
+│   │   ├── icons/
+│   │   ├── images/
+│   │   └── screenshots/
+│   ├── components/
+│   │   └── productCard.js
+│   ├── api/
+│   │   ├── fetchCategories.js
+│   │   └── fetchProducts.js
+│   ├── js/
+│   │   ├── cart.js
+│   │   ├── renderCategoryFilter.js
+│   │   ├── search.js
+│   │   └── updateProductCard.js
+│   ├── styles/
+│   │   └── style.css
+│   ├── utils/
+│   │   ├── mapperGetProduct.js
+│   │   ├── discount.js
+│   │   └── truncateText.js
+│   └── main.js
+├── index.html
+├── package.json
+└── package-lock.json
+``` 
+
+## Funcionalidades:
+- **Carga de productos** desde [DummyJSON Products API](https://dummyjson.com/docs/products#products-all).
+- **Filtrado de productos** por texto en el buscador y categorías seleccionadas en desplegable. El buscador permite filtrar los productos en tiempo real según el título, la descripción o la categoría, lo que facilita encontrar productos específicos.
+- **Descuento en productos** que muestra el precio original junto con el descuento aplicado.
+- **Contador de carrito** que incrementa al hacer clic en "Agregar al carrito".
+- **Textos truncos** para productos con descripciones largas.
 
 ## Cómo clonar el proyecto
+- Para descargar este repositorio, clona el repositorio en tu máquina local usando el siguiente comando:
 
-Para descargar este repositorio, primero clona el repositorio en tu máquina local usando el siguiente comando:
+```bash
+git clone https://github.com/Sue419/BOOTCAMP-FRONTEND-REACT-NTT.git
+cd miniMarket
+```
 
-    git clone https://github.com/Sue419/BOOTCAMP-FRONTEND-REACT-NTT.git
-
-- Para ir a la rama feature/diseños-y-estilos, utiliza los siguientes comandos:
+- Para ir a la rama feature/javascript, utiliza los siguientes comandos:
 
 1. **Ver las ramas disponibles**:
     git branch -a
@@ -42,17 +67,37 @@ Para descargar este repositorio, primero clona el repositorio en tu máquina loc
 2. **Cambiar a la rama feature/diseños-y-estilos**:
 ```bash
     git branch -a (Para traer todas las ramas del repositorio)
-    git checkout feature/diseños-y-estilos / git switch feature/diseños-y-estilos
+    git checkout feature/javascript / git switch feature/javascript
   ```
 
+- Instalar dependencias: Asegúrate de tener Node.js instalado, luego instala las dependencias con:
+
+```bash
+npm install
+```
+
+- Iniciar el servidor: para iniciar el servidor de desarrollo, usa:
+
+```bash
+npm run dev
+```
 ¡Y listo! 
 
-## Capturas de Pantalla 
-### Vista Móvil
-![Vista Móvil](.assets/screenshots/mobile-view.png)
+## Notas
+- **Paginación de productos:** Actualmente los productos se cargan de manera limitada.
 
-### Vista de Tableta
-![Vista de Tableta](assets/screenshots/tablet-view.png)
 
-### Vista de Escritorio
-![Vista de Escritorio](assets/screenshots/desktop-view.png)
+### Cambios y actualizaciones:
+1. **Estructura actualizada**: Ahora incluye las carpetas `api`, `js`, `styles`, `utils`, y `src`.
+2. **Uso de `async` y `await`**: Todo el proyecto sigue utilizando `fetch` para consumir las APIs sin librerías externas.
+
+## Requisitos Mínimos
+- [x] **Carga dinámica de productos** desde la API de DummyJSON.
+- [x] **Uso de fetch, async y await** para consumir la API sin librerías externas.
+- [x] **No uso de `innerHTML`** para la inserción dinámica de contenido.
+- [x] **Filtro en tiempo real** de productos mediante un cuadro de búsqueda que filtra por nombre, descripción y categoría.
+- [x] **Carga dinámica de categorías** desde la API de DummyJSON para el filtro de productos.
+- [x] **Filtro por categorías seleccionadas**: los productos se filtran según la categoría seleccionada por el usuario.
+- [x] **Incremento del contador de carrito** en el menú superior al hacer clic en "Agregar al carrito".
+- [x] **Subida del proyecto a un repositorio público en GitHub.**
+
