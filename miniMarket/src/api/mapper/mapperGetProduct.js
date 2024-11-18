@@ -9,7 +9,6 @@ export const mapperGetProducts = (product) => {
         stock: product.stock,
         tags: product.tags || [],
         brand: product.brand,
-        availabilityStatus: product.availabilityStatus,
         image: product.image || product.thumbnail,
     };
 };
