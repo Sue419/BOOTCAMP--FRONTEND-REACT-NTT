@@ -1,3 +1,5 @@
+import { truncateText } from "../utils/truncateText";
+
 export const createProductCard = (product) => {
     const productCard = document.createElement('article');
     productCard.classList.add('product');
@@ -54,7 +56,7 @@ const createCardInfo = (product) => {
   
     const productDescription = document.createElement('p');
     productDescription.classList.add('product-description');
-    productDescription.textContent = product.description;
+    productDescription.textContent = truncateText(product.description, 100);
   
     const productCategory = document.createElement('p');
     productCategory.classList.add('product-category');
@@ -79,7 +81,7 @@ const createCardPrice = (product) => {
 
     const productAmountPrice = document.createElement('span');
     productAmountPrice.classList.add('product-price');
-    productAmountPrice.textContent = `S/ ${product.price}`;
+    productAmountPrice.textContent = `$ ${product.price}`;
 
     productPrice.appendChild(productAmountPrice);
     return productPrice;
@@ -101,3 +103,4 @@ const createAddToCartButton = () => {
     addToCartButton.appendChild(cartIcon);
     return addToCartButton;
 };
+
