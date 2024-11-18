@@ -8,12 +8,16 @@ export const createProductCard = (product) => {
     //Información
     const cardInfo = createCardInfo(product);
   
+    //Precio
+    const productPrice = createCardPrice(product);
+  
     //Botón
     const addToCartButton = createAddToCartButton();
   
     //Orden
     productCard.appendChild(contentProductImage);
     productCard.appendChild(cardInfo);
+    productCard.appendChild(productPrice);
     productCard.appendChild(addToCartButton);
   
     const productContainer = document.querySelector('.product-container');
@@ -35,7 +39,7 @@ const createImageContainer = (product) => {
     return contentProductImage;
 };
 
-// Iformación producto (título, descripción, categoría, precio)
+// Información del producto (título, descripción, categoría)
 const createCardInfo = (product) => {
     const cardInfo = document.createElement('div');
     cardInfo.classList.add('card-info');
@@ -58,7 +62,17 @@ const createCardInfo = (product) => {
     
     const tagCategory = document.createElement('span');
     tagCategory.textContent = `${product.category}`;
-  
+
+    cardInfo.appendChild(productBrand);
+    cardInfo.appendChild(productTitle);
+    cardInfo.appendChild(productCategory);
+    cardInfo.appendChild(productDescription);
+    productCategory.appendChild(tagCategory);
+
+    return cardInfo;
+};
+
+const createCardPrice = (product) => { 
     const productPrice = document.createElement('p');
     productPrice.classList.add('product-price');
     productPrice.textContent = `Price:`;
@@ -66,18 +80,10 @@ const createCardInfo = (product) => {
     const productAmountPrice = document.createElement('span');
     productAmountPrice.classList.add('product-price');
     productAmountPrice.textContent = `S/ ${product.price}`;
-    
-    cardInfo.appendChild(productBrand)
-    cardInfo.appendChild(productTitle);
-    cardInfo.appendChild(productCategory);
-    cardInfo.appendChild(productDescription);
 
-    productCategory.appendChild(tagCategory);
-    cardInfo.appendChild(productPrice);
     productPrice.appendChild(productAmountPrice);
-  
-    return cardInfo;
-};
+    return productPrice;
+}
 
 //Botón de añadir al carrito
 const createAddToCartButton = () => {
