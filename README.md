@@ -1,55 +1,61 @@
 # BOOTCAMP-FRONTEND-REACT-NTT
 
-¡Hola! Este proyecto es una tienda en línea dinámica que consume la API de DummyJSON para cargar productos y categorías. Está diseñado con un enfoque mobile-first y utiliza JavaScript Vanilla para la interactividad.
+¡Hola! Este proyecto es una tienda en línea dinámica que consume la API de DummyJSON para cargar productos y categorías. Está diseñado con un enfoque mobile-first y utiliza **TypeScript** para la interactividad.
 
 ## Características:
 - **Diseño Mobile-First**: El proyecto está optimizado para dispositivos móviles y luego se adapta a pantallas más grandes.
 - **Carga dinámica de productos**: Los productos se cargan desde la API DummyJSON.
-- **Filtrado en tiempo real**: Los productos pueden filtrarse mediante búsqueda por texto y categorías.
-- **Carrito de compras**: Los productos agregados al carrito aumentan el contador del carrito en el menú superior.
-- **API para productos y categorías**: Uso de `fetch`, `async` y `await` para consumir la API y mostrar los datos sin librerías externas.
-- **Descuento en productos**: Los productos muestran el precio original junto con el descuento aplicado.
-- **Textos truncos**: Se aplican funciones de truncado a textos largos para mejorar la presentación.
+- **Migración a TypeScript**: Todo el proyecto ha sido migrado de JavaScript a TypeScript, con interfaces y tipos definidos para una mejor organización y seguridad en el código.
 
 ## Estructura del Proyecto:
 
 ```bash
-miniMarket/
-├── public/
-│   └── vite.svg
-├── src/
-│   ├── assets/
-│   │   ├── icons/
-│   │   ├── images/
-│   │   └── screenshots/
-│   ├── components/
-│   │   └── productCard.js
-│   ├── api/
-│   │   ├── fetchCategories.js
-│   │   └── fetchProducts.js
-│   ├── js/
-│   │   ├── cart.js
-│   │   ├── renderCategoryFilter.js
-│   │   ├── search.js
-│   │   └── updateProductCard.js
-│   ├── styles/
-│   │   └── style.css
-│   ├── utils/
-│   │   ├── mapperGetProduct.js
-│   │   ├── discount.js
-│   │   └── truncateText.js
-│   └── main.js
-├── index.html
-├── package.json
-└── package-lock.json
+BOOTCAMP-FRONTEND-REACT-NTT/
+│
+├── README.md
+│
+├── miniMarket/
+│   ├── public/
+│   │   └── vite.svg
+│   │
+│   ├── src/
+│   │   ├── api/
+│   │   │   ├── mapper/
+│   │   │   │   ├── mapperGetCategories.ts
+│   │   │   │   └── mapperGetProduct.ts
+│   │   │   ├── fetchCategories.ts
+│   │   │   └── fetchProducts.ts
+│   │   │
+│   │   ├── assets/
+│   │   │   ├── icons/
+│   │   │   ├── images/
+│   │   │   └── screenshots/
+│   │   │
+│   │   ├── components/
+│   │   │   └── productCard.tsx
+│   │   │
+│   │   ├── feature/
+│   │   │   ├── cart.ts
+│   │   │   ├── renderCategoryFilter.ts
+│   │   │   ├── search.ts
+│   │   │   └── updateProductCard.ts
+│   │   │
+│   │   ├── styles/
+│   │   │   └── style.css
+│   │   │
+│   │   ├── utils/
+│   │   │   ├── discount.ts
+│   │   │   ├── getProductById.ts
+│   │   │   └── truncateText.ts
+│   │   │
+│   │   └── main.ts
+│   │
+│   ├── index.html
+│   ├── package.json
+│   └── package-lock.json
+
 ``` 
 
-## Funcionalidades:
-- **Carga de productos** desde [DummyJSON Products API](https://dummyjson.com/docs/products#products-all).
-- **Filtrado de productos** por texto en el buscador y categorías seleccionadas en desplegable. El buscador permite filtrar los productos en tiempo real según el título, la descripción o la categoría, lo que facilita encontrar productos específicos.
-- **Descuento en productos** que muestra el precio original junto con el descuento aplicado.
-- **Contador de carrito** que incrementa al hacer clic en "Agregar al carrito".
-- **Textos truncos** para productos con descripciones largas.
 
 ## Cómo clonar el proyecto
 - Para descargar este repositorio, clona el repositorio en tu máquina local usando el siguiente comando:
@@ -64,10 +70,10 @@ cd miniMarket
 1. **Ver las ramas disponibles**:
     git branch -a
 
-2. **Cambiar a la rama feature/diseños-y-estilos**:
+2. **Cambiar a la rama feature/typescript:**:
 ```bash
     git branch -a (Para traer todas las ramas del repositorio)
-    git checkout feature/javascript / git switch feature/javascript
+    git checkout feature/typescript / git switch feature/typescript
   ```
 
 - Instalar dependencias: Asegúrate de tener Node.js instalado, luego instala las dependencias con:
@@ -88,16 +94,18 @@ npm run dev
 
 
 ### Cambios y actualizaciones:
-1. **Estructura actualizada**: Ahora incluye las carpetas `api`, `js`, `styles`, `utils`, y `src`.
-2. **Uso de `async` y `await`**: Todo el proyecto sigue utilizando `fetch` para consumir las APIs sin librerías externas.
+1. **Migración a TypeScript**: El proyecto ha sido migrado de JavaScript a TypeScript, incluyendo el uso de interfaces y tipos.
+2. **Estructura actualizada**: Ahora incluye las carpetas `api`, `feature`, `styles`, `utils`, y `src` para trabajar con TypeScript.
+3. **Uso de `async` y `await`**: Todo el proyecto sigue utilizando `fetch` para consumir las APIs sin librerías externas.
+4. **Uso de mapper**: Se ha implementado el patrón mapper para transformar las respuestas de las API y mejorar la modularidad del código.
 
 ## Requisitos Mínimos
-- [x] **Carga dinámica de productos** desde la API de DummyJSON.
-- [x] **Uso de fetch, async y await** para consumir la API sin librerías externas.
-- [x] **No uso de `innerHTML`** para la inserción dinámica de contenido.
-- [x] **Filtro en tiempo real** de productos mediante un cuadro de búsqueda que filtra por nombre, descripción y categoría.
-- [x] **Carga dinámica de categorías** desde la API de DummyJSON para el filtro de productos.
-- [x] **Filtro por categorías seleccionadas**: los productos se filtran según la categoría seleccionada por el usuario.
-- [x] **Incremento del contador de carrito** en el menú superior al hacer clic en "Agregar al carrito".
-- [x] **Subida del proyecto a un repositorio público en GitHub.**
 
+- [✔️ ] Pueden hacer uso de **Vite** o **Webpack** para crear la solución.
+- [✔️] Se deberá realizar una **migración de Javascript a Typescript** del proyecto Market.
+- [✔️] Se deberá usar de manera correcta las **interfaces** y **types** según consideren.
+- [✔️] Hacer uso del **patrón mappers** para transformar las respuestas de los servicios (**OPCIONAL**).
+- [✔️] Creación correcta de **carpetas** para mantener separada la lógica de negocio de las estructuras definidas como las interfaces o types.
+- [✔️] **Prohibido usar `any`**.
+- [✔️] Se puede hacer uso de tipos como **`unknown`** en caso se requiera.
+- [✔️] **Subirlo al repositorio GitHub Público.**
