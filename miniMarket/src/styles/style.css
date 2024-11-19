@@ -198,16 +198,18 @@ body {
 .product-image {
     background-color: var(--color-bg-light);
     padding: .5rem;
-    display: inline-block;
     border-radius: 16px;
     transition: transform 0.3s ease;
-}
-.product-image img {
-    display: block;
-    width: 100%;
-    height: auto;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
+.product-image img {
+    height: 100%;
+}
 
 .product:hover {
     transform: translateY(-5px);
