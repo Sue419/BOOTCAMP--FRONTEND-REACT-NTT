@@ -1,16 +1,17 @@
-import { fetchCategories } from "./api/fetchCategories.ts";
-import { fetchProducts } from "./api/fetchProducts.ts";
-import { renderCategoryFilter } from "./js/renderCategoryFilter.ts";
-import { updateProductCards } from "./js/updateProductCard.ts";
-import { searchProducts } from "./js/search.ts";
-import { addToCart } from "./js/cart.ts";
+import { fetchCategories } from "./api/fetchCategories";
+import { fetchProducts } from "./api/fetchProducts";
+import { renderCategoryFilter } from "./feature/renderCategoryFilter";
+import { updateProductCards } from "./feature/updateProductCard";
+import { searchProducts } from "./feature/search";
+import { addToCart} from "./feature/cart";
+import { getProductById } from "./utils/getProductById";
 
-const categoryFilter = document.querySelector('#category-filter');
-const searchInputDesktop = document.querySelector('#desktop-search');
-const searchInputMobile = document.querySelector('#mobile-search');
+const categoryFilter = document.querySelector('#category-filter') as HTMLSelectElement;
+const searchInputDesktop = document.querySelector('#desktop-search') as HTMLInputElement;
+const searchInputMobile = document.querySelector('#mobile-search') as HTMLInputElement;
 
-// 
-async function initialize() {
+//
+async function initialize(): Promise<void> {
     const categories = await fetchCategories();
     renderCategoryFilter(categories);
 
@@ -18,21 +19,39 @@ async function initialize() {
     updateProductCards(fetchedProducts);
 
     categoryFilter.addEventListener('change', (event) => {
-        const selectedCategory = event.target.value;
+        const selectedCategory = (event.target as HTMLSelectElement).value;
         const filteredProducts = selectedCategory === ""
             ? fetchedProducts
             : fetchedProducts.filter(product => product.category === selectedCategory);
         updateProductCards(filteredProducts);
     });
 
-    searchInputDesktop.addEventListener('input', (event) => searchProducts(event, fetchedProducts));
-    searchInputMobile.addEventListener('input', (event) => searchProducts(event, fetchedProducts));
-
-    document.querySelector('.product-container').addEventListener('click', (event) => {
-        if (event.target && event.target.classList.contains('add-to-cart-btn')) {
-            addToCart();
-        }
+    searchInputDesktop.addEventListener('input', (event) => {
+        const inputEvent = event as InputEvent;
+        searchProducts(inputEvent, fetchedProducts);
     });
+    
+    searchInputMobile.addEventListener('input', (event) => {
+        const inputEvent = event as InputEvent;
+        searchProducts(inputEvent, fetchedProducts);
+    });
+
+    const productContainer = document.querySelector('.product-container');
+    if (productContainer) {
+        productContainer.addEventListener('click', (event) => {
+            if (event.target && (event.target as HTMLElement).classList.contains('add-to-cart-btn')) {
+                const button = event.target as HTMLElement;
+                const productId = button.getAttribute('data-product-id');
+                if (productId) {
+                    const product = getProductById(productId, fetchedProducts);
+                    if (product) {
+                        addToCart(product);
+                    }
+                }
+            }
+        });
+    }   
+        
 }
 
 initialize();
