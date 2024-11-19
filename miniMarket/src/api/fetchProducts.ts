@@ -1,6 +1,7 @@
+import { Product } from "../types/product";
 import { mapperGetProducts } from "./mapper/mapperGetProduct";
 
-export async function fetchProducts() {
+export async function fetchProducts(): Promise<Product[]> {
     try {
         const response = await fetch('https://dummyjson.com/products');
         if (!response.ok) {
@@ -11,5 +12,6 @@ export async function fetchProducts() {
         return products;
     } catch (error) {
         console.log({error});
+        return [];
     }
 }

@@ -1,4 +1,7 @@
-export const mapperGetProducts = (product) => {
+import { Product } from "../../types/product";
+import { ProductResponse } from "../../types/productApiResponse";
+
+export const mapperGetProducts = (product: ProductResponse ): Product => {
     return {
         id: product.id,
         title: product.title,
@@ -8,7 +11,7 @@ export const mapperGetProducts = (product) => {
         discountPercentage: product.discountPercentage,
         stock: product.stock,
         tags: product.tags || [],
-        brand: product.brand,
-        image: product.image || product.thumbnail,
+        brand: product.brand || 'No brand',
+        image: product.images.length > 0 ? product.images : [product.thumbnail],
     };
 };
