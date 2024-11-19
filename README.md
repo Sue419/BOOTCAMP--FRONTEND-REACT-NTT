@@ -107,5 +107,5 @@ npm run dev
 - [✔️] Hacer uso del **patrón mappers** para transformar las respuestas de los servicios (**OPCIONAL**).
 - [✔️] Creación correcta de **carpetas** para mantener separada la lógica de negocio de las estructuras definidas como las interfaces o types.
 - [✔️] **Prohibido usar `any`**.
-- [✔️] Se puede hacer uso de tipos como **`unknown`** en caso se requiera.
+- [] Se puede hacer uso de tipos como **`unknown`** en caso se requiera.
 - [✔️] **Subirlo al repositorio GitHub Público.**
