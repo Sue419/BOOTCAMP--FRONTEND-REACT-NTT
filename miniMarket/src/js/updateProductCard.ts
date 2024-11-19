@@ -1,7 +1,8 @@
 import { createProductCard } from "../components/productCard";
+import { Product } from "../types/product";
 
-export function updateProductCards(productsToDisplay) {
-    const productContainer = document.querySelector('.product-container');
+export function updateProductCards(productsToDisplay: Product[]): void {
+    const productContainer = document.querySelector('.product-container') as HTMLElement;
     while (productContainer.firstChild) {
         productContainer.removeChild(productContainer.firstChild);
     }

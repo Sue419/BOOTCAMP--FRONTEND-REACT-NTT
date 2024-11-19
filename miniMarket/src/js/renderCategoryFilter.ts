@@ -1,5 +1,7 @@
-export function renderCategoryFilter(categories) {
-    const categoryFilter = document.querySelector('#category-filter');
+import { Category } from "../types/category";
+
+export function renderCategoryFilter(categories: Category[]): void  {
+    const categoryFilter = document.querySelector('#category-filter') as HTMLSelectElement;
 
     while (categoryFilter.firstChild) {
         categoryFilter.removeChild(categoryFilter.firstChild);

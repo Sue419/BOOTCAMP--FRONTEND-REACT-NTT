@@ -1,7 +1,8 @@
-import { truncateText } from "../utils/truncateText"; 
+import { truncateText } from "../utils/truncateText"
 import { calculateDiscountedPrice } from "../utils/discount";
+import { Product } from "../types/product";
 
-export const createProductCard = (product) => {
+export const createProductCard = (product: Product): HTMLElement => {
     const productCard = document.createElement('article');
     productCard.classList.add('product');
 
@@ -15,7 +16,7 @@ export const createProductCard = (product) => {
     const productPrice = createCardPrice(product);
   
     // Botón
-    const addToCartButton = createAddToCartButton();
+    const addToCartButton = createAddToCartButton(product);
   
     // Orden
     productCard.appendChild(contentProductImage);
@@ -24,18 +25,20 @@ export const createProductCard = (product) => {
     productCard.appendChild(addToCartButton);
   
     const productContainer = document.querySelector('.product-container');
-    productContainer.appendChild(productCard);
+    if (productContainer) {
+        productContainer.appendChild(productCard);
+    }
 
     return productCard;
 };
 
 // Imagen del producto
-const createImageContainer = (product) => {
+const createImageContainer = (product: Product): HTMLElement => {
     const contentProductImage = document.createElement('div');
     contentProductImage.classList.add('product-image');
     
     const productImage = document.createElement('img');
-    productImage.src = product.image;
+    productImage.src = product.image[0];
     productImage.alt = product.title;
     
     contentProductImage.appendChild(productImage);
@@ -43,13 +46,13 @@ const createImageContainer = (product) => {
 };
 
 // Información del producto (título, descripción, categoría)
-const createCardInfo = (product) => {
+const createCardInfo = (product: Product): HTMLElement => {
     const cardInfo = document.createElement('div');
     cardInfo.classList.add('card-info');
 
     const productBrand = document.createElement('h4');
     productBrand.classList.add('product-brand');
-    productBrand.textContent = product.brand;
+    productBrand.textContent = product.brand || 'No Brand';
   
     const productTitle = document.createElement('h2');
     productTitle.classList.add('product-title');
@@ -76,14 +79,14 @@ const createCardInfo = (product) => {
 };
 
 // Precio del producto (precio original y con descuento)
-const createCardPrice = (product) => { 
+const createCardPrice = (product: Product): HTMLElement => { 
     const productPrice = document.createElement('div');
     productPrice.classList.add('product-price');
 
     // Precio original
     const originalPrice = document.createElement('p');
     originalPrice.classList.add('product-original-price');
-    originalPrice.textContent = `Precio: $ ${product.price.toFixed(2)}`;
+    originalPrice.textContent = `Precio: $ ${product.price}`;
 
     // Precio con descuento
     const discountedPrice = document.createElement('p');
@@ -103,10 +106,12 @@ const createCardPrice = (product) => {
 };
 
 // Botón de añadir al carrito
-const createAddToCartButton = () => {
+const createAddToCartButton = (product: Product): HTMLElement => {
     const addToCartButton = document.createElement('button');
     addToCartButton.classList.add('add-to-cart-btn');
     addToCartButton.textContent = `Añadir al carrito`;
+    addToCartButton.setAttribute('data-product-id', product.id.toString());
+
 
     const cartIcon = document.createElement('div');
     cartIcon.classList.add('cart-icon_btn');
