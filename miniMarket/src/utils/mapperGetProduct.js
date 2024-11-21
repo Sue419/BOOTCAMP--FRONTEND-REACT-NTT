@@ -1,3 +1,4 @@
+// podr'ias tener una carpeta mmaper donde solo este estas funcionalidades
 export const mapperGetProducts = (product) => {
     return {
         id: product.id,
