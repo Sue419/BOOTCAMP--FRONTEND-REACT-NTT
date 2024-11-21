@@ -1,7 +1,8 @@
 import { Product } from "../types/product";
 
 let cartCount = 0;
-let cart: Product[] = [];
+// si no se reasigna un valor se usa const
+const cart: Product[] = [];
 
 export function updateCartCount(): void {
     const cartIcon = document.querySelector('.cart-icon span');
