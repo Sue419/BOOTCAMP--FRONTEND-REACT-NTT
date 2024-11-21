@@ -1,4 +1,4 @@
-import { mapperGetProducts } from "../utils/mapperGetProduct";
+import { mapperGetProducts } from "../mappers/mapperGetProduct";
 
 export async function fetchProducts() {
     try {
