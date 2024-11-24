@@ -1,0 +1,146 @@
+
+
+/*Estilos para las card de los productos*/
+
+.product {
+    flex: 1 1 300px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid --color-border;
+    padding: 1rem;
+    border-radius: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--color-bg-medium);
+    gap: 1rem;
+}
+
+.product-image {
+    background-color: var(--color-bg-light);
+    padding: .5rem;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.product-image img {
+    height: 100%;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: .5rem;
+}
+
+.card-info h2,
+.card-info p {
+    margin: 0;
+    line-height: 1.75;
+}
+
+.product-brand {
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+}
+.product-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.product-category {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+}
+
+.product-category span {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    background-color: var(--color-primary);
+    padding: 0.3rem 0.6rem;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+.product-original-price {
+    text-decoration: line-through;
+    color: var(--color-text-secondary);
+}
+
+.product-discounted-price span{
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    padding: 0.2rem 0.5rem;
+}
+
+.add-to-cart-btn {
+    position: relative;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-icon_btn {
+    display: none;
+    margin-left: 8px;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Efecto icono añadir al carro de compras */
+.add-to-cart-btn:hover .cart-icon_btn {
+    display: inline-block;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+}
+
+.cart-icon_btn img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+
+/* Media querie para tablet */
+@media (min-width: 768px) {
+    
+    .product-container {
+        padding: 2rem 0;
+        gap: 1.5rem;
+    }
+}
+
+

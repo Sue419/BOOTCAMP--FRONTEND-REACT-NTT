@@ -1,0 +1,25 @@
+.product-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  min-height: 550px;
+}
+
+@media (min-width: 768px) {
+  .product-container {
+    padding: 2rem 0;
+    gap: 1.5rem;
+  }
+}
+
+/* Media querie para desktop */
+@media (min-width: 1024px) {
+  .product-container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    gap: 2rem;
+    min-height: 650px;
+  }
+}
