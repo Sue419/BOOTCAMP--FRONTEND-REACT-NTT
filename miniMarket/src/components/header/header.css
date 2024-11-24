@@ -1,0 +1,203 @@
+/* Estilos header*/
+.header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-bg-light);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    gap: .5rem;
+}
+.header-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 1rem 1rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin: 0 0.5rem;
+}
+
+.icons {
+    display: inline-flex;
+    gap: 1rem;
+}
+.cart-icon {
+    position: relative;
+}
+
+.cart-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.cart-icon span {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    border-radius: 50%;
+    padding: 3px 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.user-icon img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.cart-icon, 
+.user-icon {
+    display: flex;
+    align-self: center;
+}
+
+.header-bottom {
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+}
+
+.mobile-search {
+    padding: 0 1rem 0;
+}
+/* Estilos de filtro y buscador */
+
+.search-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+.search input,
+.filter select {
+    padding: 0.5rem 0.8rem;
+}
+
+.search {
+    display: flex;
+    align-items: stretch;
+
+}
+
+.search input {
+    padding: 0.5rem 0.8rem;
+    border: 1px solid var(--color-border);
+    border-right: none;
+    border-radius: 12px 0 0 12px;
+    width: 100%;
+    outline: none;
+}
+
+.search-button {
+    padding: 0.5rem 0.8rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0 12px 12px 0;
+    background-color: var(--color-primary);
+    cursor: pointer;
+}
+
+.search-button img {
+    width: 20px;
+    height: auto;
+}
+
+.filter {
+    width: 100%;
+}
+.filter select {
+    height: 40px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    width: 100%;
+    outline: none;
+}
+
+.desktop-search {
+    display: none;
+}
+
+/* Media querie para tablet */
+@media (min-width: 768px) {
+
+    .logo img,
+    .cart-icon img,
+    .user-icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .search-filter {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        width: 50%;
+    }
+
+    .search input,
+    .filter select {
+        width: 100%;
+        font-size: 16px;
+    }
+
+}
+
+/* Media querie para desktop */
+@media (min-width: 1024px) {
+
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .cart-icon img {
+        width: 40px;
+        height: 40px;
+    }
+    .user-icon img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .header-top,
+    .search-filter {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    .search-and-icons {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        width: 50%;
+        justify-content: flex-end;
+    }
+
+    .desktop-search {
+        display: inline-flex;
+        width: 100%;
+    }
+    .mobile-search {
+        display: none;
+    }
+
+}
+
