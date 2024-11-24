@@ -1,12 +1,12 @@
 import { FC, useState, useEffect, useCallback } from "react";
-import Header from "../components/header/header";
-import Footer from "../components/footer/footer";
-import Main from "../components/main/main";
-import { fetchProducts } from "../proxy/fetchProducts";
-import { fetchCategories } from "../proxy/fetchCategories";
-import { filterProducts } from "../logic/search";
-import { Product } from "../domain/product";
-import { CartProvider } from "../context/cartContext";
+import Header from "../../components/header/header";
+import Footer from "../../components/footer/footer";
+import Main from "../../components/main/main";
+import { fetchProducts } from "../../proxy/fetchProducts";
+import { fetchCategories } from "../../proxy/fetchCategories";
+import { filterProducts } from "../../logic/search";
+import { Product } from "../../domain/product";
+import { CartProvider } from "../../context/cartContext";
 
 const HomePage: FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
