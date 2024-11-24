@@ -1,0 +1,165 @@
+/* Estilos para el Footer */
+.footer-container {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    margin: 0 1rem;
+    padding: 2rem 1rem 1rem;
+    text-align: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo-content {
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.footer-logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.footer-logo h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.footer-logo-content p {
+    font-size: 1rem;
+    margin: .5rem 0;
+    font-weight: 500;
+}
+
+.footer-links {
+    text-align: center;
+}
+
+.footer-links h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--color-text-light);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: var(--color-secondary);
+}
+
+.footer-social-media {
+    text-align: center;
+}
+
+.footer-social-media h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-media a {
+    margin: 0 0.5rem;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-media img:hover {
+    transform: scale(1.1);
+}
+
+.footer-copy {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+}
+
+.footer-copy p {
+    margin: 0;
+}
+
+/* Media querie para tablet */
+@media (min-width: 768px) {
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .footer-logo-content {
+        width: 30%;
+    }
+
+    .footer-links {
+        width: 30%;
+    }
+
+    .footer-social-media {
+        width: 30%;
+    }
+
+    .footer-links h3,
+    .footer-social-media h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Media querie para desktop */
+@media (min-width: 1024px) {
+
+    .footer-container {
+        margin: 0 4rem;
+        padding: 2rem 2rem 1rem;
+    }
+
+    .footer-content {
+        gap: 3rem;
+    }
+
+    .footer-logo h2 {
+        font-size: 2rem;
+    }
+
+    .footer-social-media p {
+        font-size: 1rem;
+    }
+
+    .footer-links {
+        font-size: 1rem;
+    }
+
+    .footer-copy {
+        font-size: 1rem;
+    }
+}
