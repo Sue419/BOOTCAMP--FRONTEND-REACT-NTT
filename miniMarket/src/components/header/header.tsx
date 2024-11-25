@@ -10,6 +10,8 @@ interface HeaderProps {
   onSearch: (query: string) => void;
   onCategoryChange: (category: string) => void;
   categories: Category[];
+  isCheckoutPage?: boolean;
+
 }
 
 const Header: FC<HeaderProps> = ({

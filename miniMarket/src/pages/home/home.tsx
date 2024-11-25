@@ -1,53 +1,30 @@
-import { FC, useState, useEffect, useCallback } from "react";
+// HomePage.tsx
+import { FC, useState, useEffect } from "react";
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
 import Main from "../../components/main/main";
 import { fetchProducts } from "../../proxy/fetchProducts";
-import { fetchCategories } from "../../proxy/fetchCategories";
-import { filterProducts } from "../../logic/search";
-import { Product } from "../../domain/product";
 import { CartProvider } from "../../context/cartContext";
+import { useSearchAndCategories } from "../../hooks/useSearchAndCategories";
+import { Product } from "../../domain/product";
 
 const HomePage: FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
-  const [categories, setCategories] = useState<{ slug: string; name: string }[]>([]);
 
   useEffect(() => {
-    const loadProductsAndCategories = async () => {
-      const productsData = await fetchProducts();
-      const categoriesData = await fetchCategories();
-  
-      setProducts(productsData);
-      setFilteredProducts(productsData);
-  
-      const categoryNames = categoriesData.map((category) => ({
-        slug: category.slug,
-        name: category.name,
-      }));
-      setCategories([{ slug: '', name: 'All categories' }, ...categoryNames]);
+    const loadProducts = async () => {
+      try {
+        const productsData = await fetchProducts();
+        setProducts(productsData);
+      } catch (error) {
+        console.error('Error loading products:', error);
+      }
     };
-  
-    loadProductsAndCategories();
+
+    loadProducts();
   }, []);
-  
 
-  const handleSearch = useCallback(
-    (query: string) => {
-      const filtered = filterProducts(query, products);
-      setFilteredProducts(filtered);
-    },
-    [products]
-  );
-
-  const handleCategoryChange = (categorySlug: string) => {
-    if (categorySlug === '') {
-      setFilteredProducts(products);
-    } else {
-      const filtered = products.filter(product => product.category === categorySlug);
-      setFilteredProducts(filtered);
-    }
-  };
+  const { filteredProducts, categories, handleSearch, handleCategoryChange } = useSearchAndCategories(products);
 
   return (
     <>
@@ -57,8 +34,7 @@ const HomePage: FC = () => {
           onCategoryChange={handleCategoryChange}
           categories={categories}
         />
-      
-        <Main products={filteredProducts} />
+        <Main products={filteredProducts} showCheckout={false} />
       </CartProvider>
       <Footer />
     </>
