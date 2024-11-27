@@ -48,6 +48,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     return state.cart.find((product) => product.id === productId);
   };
 
+  // el provider solo deber'ia exportar el valor en memoria y el despachador para que sea el consumidor que sea el encargado de usarlo seg'un lo necesite, no es necesario definir funciones generales que siempre esten presente aunque no se usen en todas las p'aginas
   return (
     <CartContext.Provider
       value={{

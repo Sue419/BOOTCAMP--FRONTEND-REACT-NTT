@@ -1,5 +1,7 @@
 import { Product } from "../domain/product";
 
+// podr'ia estar en un mapper
+
 export function filterProducts(query: string, products: Product[]): Product[] {
     const lowerCaseQuery = query.toLowerCase();
     return products.filter(product =>

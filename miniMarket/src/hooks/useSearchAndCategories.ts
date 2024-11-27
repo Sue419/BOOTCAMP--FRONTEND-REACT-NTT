@@ -16,6 +16,7 @@ export const useSearchAndCategories = (initialProducts: Product[]) => {
         slug: category.slug,
         name: category.name,
       }));
+      // este valor deber'ia estar en una constnate
       setCategories([{ slug: '', name: 'All categories' }, ...categoryNames]);
     };
 

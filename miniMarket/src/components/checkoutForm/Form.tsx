@@ -11,6 +11,7 @@ const CheckoutForm: FC = () => {
 
   const { isModalVisible, openModal, closeModal } = useModal();
 
+  // falta tipar para permitir solo las keys necesarias
   const [formData, setFormData] = useState({
     name: "",
     lastName: "",
@@ -20,6 +21,7 @@ const CheckoutForm: FC = () => {
     phone: "",
   });
 
+  // falta tipar para permitir solo las keys necesarias
   const [errors, setErrors] = useState({
     name: "",
     lastName: "",
@@ -30,6 +32,8 @@ const CheckoutForm: FC = () => {
   });
 
   const validate = () => {
+    // muy complicado de leer esta secci'on
+    // los regex deben estar en un archivo aparte para reutilizarlas en otros casos
     const newErrors = {
       name: !formData.name.match(/^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$/)
         ? "Please enter a valid name."
@@ -56,6 +60,8 @@ const CheckoutForm: FC = () => {
       console.log("Order submitted:", formData);
 
       openModal();
+
+      // se podr'ia crear una accion para limpiar todo el carrito y no iterar para limpiarlo
       cartContext?.cart.forEach((product) =>
         cartContext.removeFromCart(product.id)
       );
@@ -64,6 +70,7 @@ const CheckoutForm: FC = () => {
 
   const handleCloseModal = () => {
     closeModal();
+    // usar enum
     navigate("/");
   };
 

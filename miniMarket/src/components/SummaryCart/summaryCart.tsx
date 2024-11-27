@@ -4,6 +4,7 @@ import { calculateDiscountedPrice } from "../../utils/discount";
 import "./sumaryCart.css";
 
 const SummaryCart = () => {
+  // esto debe estar fuera de este componente
   const cartContext = useContext(CartContext);
 
   if (!cartContext) {
