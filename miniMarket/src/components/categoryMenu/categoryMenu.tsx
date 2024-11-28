@@ -30,6 +30,7 @@ const CategoryMenu: FC<CategoryMenuProps> = ({
             key={category.slug}
             onClick={() => {
               onCategorySelect(category.slug);
+              // por qu'e?
               toggleMenu?.();
             }}
           >

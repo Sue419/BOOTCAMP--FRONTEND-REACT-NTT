@@ -5,9 +5,11 @@ import { useCart } from "../../hooks/useCart";
 const CartIcon: FC = () => {
   const { cartCount } = useCart();
 
+  // por qu'e este useEffect?
   useEffect(() => {
   }, [cartCount]); 
 
+  // usemos enum para paths
   return (
     <Link to="/checkout">
       <button className="cart-icon">

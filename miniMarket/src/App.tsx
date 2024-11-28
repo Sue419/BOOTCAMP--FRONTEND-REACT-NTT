@@ -6,6 +6,7 @@ import './App.css'
 function App() {
 
 
+  // usar enum para paths
   return (
     <>
       <Router>
