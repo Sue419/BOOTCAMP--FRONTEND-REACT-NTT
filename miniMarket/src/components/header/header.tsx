@@ -19,6 +19,7 @@ const Header: FC<HeaderProps> = ({
   onCategoryChange,
   categories,
 }) => {
+  // textos deben estar en constantes para entender su uso
   const [selectedCategory, setSelectedCategory] = useState(
     "All categories"
   );
@@ -39,6 +40,7 @@ const Header: FC<HeaderProps> = ({
   };
 
   useEffect(() => {
+    // crear un hook o un util para esto
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
