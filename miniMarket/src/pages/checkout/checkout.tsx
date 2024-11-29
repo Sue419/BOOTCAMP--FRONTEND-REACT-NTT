@@ -6,16 +6,16 @@ import Footer from "../../components/footer/footer";
 import { useCategories } from "../../hooks/useCategories";
 
 const Checkout: FC = () => {
-  const { categories } = useCategories(); // Usamos categorías solo si es necesario en el Header
+  const { categories } = useCategories();
 
   return (
     <div>
       <CartProvider>
         <Header
-          onSearch={() => {}} // No se necesita lógica de búsqueda
-          onCategoryChange={() => {}} // No se necesita lógica de filtrado
-          categories={categories} // Pasamos categorías aunque el Header no las muestre en Checkout
-          isCheckoutPage={true} // Indicamos que es la vista de Checkout
+          onSearch={() => {}}
+          onCategoryChange={() => {}}
+          categories={categories}
+          isCheckoutPage={true}
         />
         <Main products={[]} showCheckout={true} />
         <Footer />

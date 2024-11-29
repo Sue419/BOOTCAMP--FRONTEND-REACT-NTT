@@ -1,7 +1,8 @@
 // components/sidebar/sidebar.tsx
 import { FC, useState } from "react";
-import CategoryMenu from "../categoryMenu/categoryMenu";
+import CategorySelector from "../categorySelector/categorySelector";
 import "./sidebar.css";
+import { Button } from "../shared/button/button";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -17,47 +18,42 @@ const Sidebar: FC<SidebarProps> = ({
   categories,
 }) => {
   const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);
+
   const toggleCategoryMenu = () => {
     setIsCategoryMenuOpen((prevState) => !prevState);
   };
 
-  // Modificación aquí: al seleccionar una categoría, también cerramos el sidebar
   const handleCategorySelect = (category: string) => {
-    onCategorySelect(category); // Llamada a onCategorySelect
-    closeSidebar(); // Cerrar el sidebar al seleccionar la categoría
+    onCategorySelect(category);
+    closeSidebar();
   };
 
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`} onClick={closeSidebar}>
-      {/* Encabezado con saludo y botón de cerrar */}
       <div className="sidebar-header">
         <span>¡Hola!</span>
-        <button className="close-button" onClick={closeSidebar}>
+        <Button className="close-button" onClick={closeSidebar}>
           &#10005;
-        </button>
+        </Button>
       </div>
-
-      {/* Botón para mostrar el menú de categorías */}
-      <button
+      <Button
         className="categories-toggle"
-        onClick={(e) => {
+        onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
           e.stopPropagation();
           toggleCategoryMenu();
         }}
       >
-        Categorías
-      </button>
-
-      {/* Menú de categorías, con scroll en caso de lista larga */}
+        Categories
+      </Button>
       {isCategoryMenuOpen && (
         <div className="category-menu-container">
-          <CategoryMenu
-            categories={categories}
-            onCategorySelect={handleCategorySelect}
-            isOpen={isCategoryMenuOpen}
-            toggleMenu={toggleCategoryMenu}
-            orientation="vertical"
-          />
+          <CategorySelector
+          categories={categories}
+          onCategorySelect={handleCategorySelect}
+          renderAs="menu"
+          isOpen={isCategoryMenuOpen}
+          toggleMenu={toggleCategoryMenu}
+        />
         </div>
       )}
     </div>
