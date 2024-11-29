@@ -1,45 +1,38 @@
-// HomePage.tsx
-import { FC, useState, useEffect } from "react";
+import { FC } from "react";
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
 import Main from "../../components/main/main";
-import { fetchProducts } from "../../proxy/fetchProducts";
 import { CartProvider } from "../../context/cartContext";
-import { useSearchAndCategories } from "../../hooks/useSearchAndCategories";
-import { Product } from "../../domain/product";
+import { useCategories } from "../../hooks/useCategories";
+import { useProductSearch } from "../../hooks/useProductSearch";
+import { useProducts } from "@/hooks/useProducts";
+
 
 const HomePage: FC = () => {
-  const [products, setProducts] = useState<Product[]>([]);
 
-  useEffect(() => {
-    const loadProducts = async () => {
-      try {
-        const productsData = await fetchProducts();
-        setProducts(productsData);
-      } catch (error) {
-        console.error('Error loading products:', error);
-      }
-    };
+  const { products, loading, error } = useProducts();
+  const { categories } = useCategories();
+  const { filteredProducts, handleSearch, handleCategoryChange } = useProductSearch(products);
 
-    loadProducts();
-  }, []);
+  if (loading) {
+    return <div>Loading...</div>;
+  } if (error) {
+    return <div>{error}</div>;
+  } 
 
-  const { filteredProducts, categories, handleSearch, handleCategoryChange } = useSearchAndCategories(products);
 
   return (
-    <>
-      <CartProvider>
-        <Header
-          onSearch={handleSearch}
-          onCategoryChange={handleCategoryChange}
-          categories={categories}
-        />
-        <Main products={filteredProducts} showCheckout={false} />
-      </CartProvider>
+    <CartProvider>
+      <Header
+        onSearch={handleSearch}
+        onCategoryChange={handleCategoryChange}
+        categories={categories}
+        isCheckoutPage={false}
+      />
+      <Main products={filteredProducts} showCheckout={false} />
       <Footer />
-    </>
+    </CartProvider>
   );
 };
-
 
 export default HomePage;

@@ -1,30 +1,30 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState, } from "react";
 import { Category } from "../../domain/category";
 import SearchBar from "../searchBar/searchBar";
 import CategoryDropdown from "../dropdownSelect/dropdown";
 import Sidebar from "../sidebarMenu/sidebar";
 import CartIcon from "../cartIcon/cartIcon";
+import useResponsive from "@/hooks/useResponsive";
 import "./header.css";
+
+const DEFAULT_CATEGORY = "All categories";
 
 interface HeaderProps {
   onSearch: (query: string) => void;
   onCategoryChange: (category: string) => void;
   categories: Category[];
   isCheckoutPage?: boolean;
-
 }
 
 const Header: FC<HeaderProps> = ({
   onSearch,
   onCategoryChange,
   categories,
+  isCheckoutPage = false,
 }) => {
-  // textos deben estar en constantes para entender su uso
-  const [selectedCategory, setSelectedCategory] = useState(
-    "All categories"
-  );
+  const isMobile = useResponsive(768);
+  const [selectedCategory, setSelectedCategory] = useState(DEFAULT_CATEGORY);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
@@ -39,22 +39,10 @@ const Header: FC<HeaderProps> = ({
     setIsSidebarOpen(false);
   };
 
-  useEffect(() => {
-    // crear un hook o un util para esto
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <header className="header-container">
       <div className="header-top">
-        {isMobile && (
+        {isMobile && !isCheckoutPage && (
           <button className="menu-button" onClick={toggleSidebar}>
             &#9776;
           </button>
@@ -73,7 +61,7 @@ const Header: FC<HeaderProps> = ({
         </div>
 
         <div className="search-and-icons">
-          {!isMobile && (
+          {!isMobile && !isCheckoutPage && (
             <div className="desktop-search">
               <SearchBar onSearch={onSearch} id="desktop-search-input" />
             </div>
@@ -87,19 +75,24 @@ const Header: FC<HeaderProps> = ({
         </div>
       </div>
 
-      <div className="mobile-search">
-        <SearchBar onSearch={onSearch} id="mobile-search-input" />
-      </div>
-
-      <div className="header-bottom">
-        {!isMobile && (
-          <CategoryDropdown
-            categories={categories}
-            selectedOption={selectedCategory}
-            onChange={handleCategoryChange}
-          />
-        )}
-      </div>
+      {!isCheckoutPage && (
+        <>
+          <div className="mobile-search">
+            {isMobile && (
+              <SearchBar onSearch={onSearch} id="mobile-search-input" />
+            )}
+          </div>
+          <div className="header-bottom">
+            {!isMobile && (
+              <CategoryDropdown
+                categories={categories}
+                selectedCategory={selectedCategory}
+                onCategorySelect={handleCategoryChange}
+              />
+            )}
+          </div>
+        </>
+      )}
     </header>
   );
 };
