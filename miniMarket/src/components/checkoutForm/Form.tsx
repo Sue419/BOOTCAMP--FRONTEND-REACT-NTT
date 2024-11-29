@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/cartContext";
 import ModalSuccess from "../modalSuccess/modalSuccess";
 import { useModal } from "../../hooks/useModal";
+import { Button } from "../shared/button/button";
 import "./Form.css";
 
 const CheckoutForm: FC = () => {
@@ -184,9 +185,9 @@ const CheckoutForm: FC = () => {
           {errors.phone && <div className="error">{errors.phone}</div>}
         </div>
 
-        <button type="submit" className="checkout-form-submit">
+        <Button type="submit" className="checkout-form-submit">
           Submit
-        </button>
+        </Button>
       </form>
 
       <ModalSuccess
