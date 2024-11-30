@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
-import Main from "../../components/main/main";
+import ProductMain from "@/components/productMain/productMain";
 import { CartProvider } from "../../context/cartContext";
 import { useCategories } from "../../hooks/useCategories";
 import { useProductSearch } from "../../hooks/useProductSearch";
@@ -29,7 +29,7 @@ const HomePage: FC = () => {
         categories={categories}
         isCheckoutPage={false}
       />
-      <Main products={filteredProducts} showCheckout={false} />
+      <ProductMain products={filteredProducts} />
       <Footer />
     </CartProvider>
   );
