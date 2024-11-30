@@ -11,7 +11,7 @@ export async function fetchCategories(): Promise<Category[]> {
         const dataCategories = data.map(mapperCategories); 
         return dataCategories;
     } catch (error) {
-        console.log({error});
+        console.error("Error al obtener categorías", error);
         return [];
     } 
 }
