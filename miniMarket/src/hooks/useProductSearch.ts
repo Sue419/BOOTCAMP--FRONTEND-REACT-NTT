@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
-import { filterProducts } from "../logic/search";
+import { filterProducts } from "../logic/productFilter";
 import { Product } from "../domain/product";
 
 export const useProductSearch = (initialProducts: Product[]) => {
