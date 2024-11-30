@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Product } from "../domain/product";
 import { fetchProducts } from "../proxy/fetchProducts";
 
-/*** Hook para gestionar la carga de productos.***/
 export const useProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);

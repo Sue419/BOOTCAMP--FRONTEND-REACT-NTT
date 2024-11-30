@@ -1,4 +1,3 @@
-// shared/IconButton.tsx
 interface IconButtonProps {
     onClick?: () => void;
     icon: string;

@@ -1,10 +1,18 @@
-import { useContext } from "react";
-import { CartContext } from "../context/cartContext";
+import { useContext } from 'react';
+import { CartStateContext, CartDispatchContext } from '../context/cart/cartContext';
 
 export const useCart = () => {
-    const context = useContext(CartContext);
-    if (!context) {
-        throw new Error("Error");
+    const stateContext = useContext(CartStateContext);
+    const dispatchContext = useContext(CartDispatchContext);
+  
+    if (!stateContext || !dispatchContext) {
+      throw new Error('useCart must be used within a CartProvider');
     }
-    return context;
-};
+  
+    const { cart } = stateContext;
+  
+    const cartCount = cart?.reduce((total, product) => total + product.quantity, 0) || 0;
+  
+    return { state: stateContext, dispatch: dispatchContext, cartCount };
+  };
+  

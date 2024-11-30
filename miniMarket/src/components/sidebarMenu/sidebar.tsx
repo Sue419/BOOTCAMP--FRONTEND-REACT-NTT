@@ -1,4 +1,3 @@
-// components/sidebar/sidebar.tsx
 import { FC, useState } from "react";
 import CategorySelector from "../categorySelector/categorySelector";
 import "./sidebar.css";

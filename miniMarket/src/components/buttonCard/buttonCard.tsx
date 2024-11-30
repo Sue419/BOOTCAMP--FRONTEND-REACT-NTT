@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { useCart } from "../../hooks/useCart";
-import { Product } from "../../domain/product";
+import { useCartActions } from "@/context/cart/cartAction";
+import { Product, CartProduct } from "../../domain/product";
 import { Button } from "../shared/button/button";
 
 interface AddToCartButtonProps {
@@ -8,12 +8,17 @@ interface AddToCartButtonProps {
 }
 
 const AddToCartButton: FC<AddToCartButtonProps> = ({ product }) => {
-  const { addToCart } = useCart();
+  const { addToCart } = useCartActions();
+
+  const handleAddToCart = (product: Product) => {
+    const cartProduct: CartProduct = { ...product, quantity: 1 };
+    addToCart(cartProduct);
+  };
 
   return (
     <Button
       className="add-to-cart-btn"
-      onClick={() => addToCart(product)}
+      onClick={() => handleAddToCart(product)}
       data-product-id={product.id}
     >
       Add to cart

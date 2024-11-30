@@ -2,7 +2,7 @@ import { FC } from "react";
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
 import ProductMain from "@/components/productMain/productMain";
-import { CartProvider } from "../../context/cartContext";
+import { CartProvider } from "../../context/cart/cartContext";
 import { useCategories } from "../../hooks/useCategories";
 import { useProductSearch } from "../../hooks/useProductSearch";
 import { useProducts } from "@/hooks/useProducts";

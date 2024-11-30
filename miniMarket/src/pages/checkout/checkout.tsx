@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { CartProvider } from "../../context/cartContext";
+import { CartProvider } from "../../context/cart/cartContext";
 import Header from "../../components/header/header";
 import CheckoutMain from "../../components/checkoutMain/checkoutMain";
 import Footer from "../../components/footer/footer";

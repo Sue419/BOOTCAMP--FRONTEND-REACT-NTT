@@ -1,20 +1,12 @@
-import { useContext } from "react";
-import { CartContext } from "../../context/cartContext";
+import { useCartActions } from "@/context/cart/cartAction";
 import { calculateDiscountedPrice } from "../../utils/discount";
 import "./sumaryCart.css";
 
 const SummaryCart = () => {
-  // esto debe estar fuera de este componente
-  const cartContext = useContext(CartContext);
 
-  if (!cartContext) {
-    return <p>Error: The cart context is unavailable.</p>;
-  }
-
-  const { cart, incrementQuantity, decrementQuantity, removeFromCart } =
-    cartContext;
-
-  const total = cart.reduce(
+  const { cart, incrementQuantity, decrementQuantity, removeFromCart } = useCartActions();
+  
+  const total = (cart ?? []).reduce(
     (sum, product) =>
       sum +
       calculateDiscountedPrice(product.price, product.discountPercentage) *
