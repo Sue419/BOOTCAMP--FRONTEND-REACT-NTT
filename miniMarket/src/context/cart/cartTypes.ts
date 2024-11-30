@@ -15,7 +15,8 @@ export type CartProduct = {
     | { type: "ADD_TO_CART"; payload: CartProduct }
     | { type: "REMOVE_FROM_CART"; payload: { productId: number } }
     | { type: "INCREMENT"; payload: { productId: number } }
-    | { type: "DECREMENT"; payload: { productId: number } };
+    | { type: "DECREMENT"; payload: { productId: number } }
+    | { type: "CLEAR_CART" };
   
   export type CartDispatch = (action: CartAction) => void;
   

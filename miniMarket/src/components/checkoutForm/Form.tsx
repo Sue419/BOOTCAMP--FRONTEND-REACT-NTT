@@ -1,19 +1,46 @@
 import { FC, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { CartContext } from "../../context/cartContext";
+import { CartStateContext, CartDispatchContext } from "@/context/cart/cartContext";
 import ModalSuccess from "../modalSuccess/modalSuccess";
 import { useModal } from "../../hooks/useModal";
 import { Button } from "../shared/button/button";
+import { textRegex, numberRegex } from "@/utils/regexValidators";
+import useDistricts from "@/hooks/useDistricts";
+import { useCartActions } from "@/context/cart/cartAction";
+import { AppRoutes } from "@/constants/routes";
 import "./Form.css";
 
+interface FormData {
+  name: string;
+  lastName: string;
+  district: string;
+  address: string;
+  reference: string;
+  phone: string;
+}
+
+interface FormErrors {
+  name: string;
+  lastName: string;
+  district: string;
+  address: string;
+  reference: string;
+  phone: string;
+}
+
 const CheckoutForm: FC = () => {
-  const cartContext = useContext(CartContext);
+  const cartState = useContext(CartStateContext);
+  const cartDispatch = useContext(CartDispatchContext);
+  const { clearCart } = useCartActions();
+
   const navigate = useNavigate();
 
   const { isModalVisible, openModal, closeModal } = useModal();
+  const { districts} = useDistricts();
+
 
   // falta tipar para permitir solo las keys necesarias
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     lastName: "",
     district: "",
@@ -23,7 +50,7 @@ const CheckoutForm: FC = () => {
   });
 
   // falta tipar para permitir solo las keys necesarias
-  const [errors, setErrors] = useState({
+  const [errors, setErrors] = useState<FormErrors>({
     name: "",
     lastName: "",
     district: "",
@@ -33,22 +60,42 @@ const CheckoutForm: FC = () => {
   });
 
   const validate = () => {
-    // muy complicado de leer esta secci'on
-    // los regex deben estar en un archivo aparte para reutilizarlas en otros casos
-    const newErrors = {
-      name: !formData.name.match(/^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$/)
-        ? "Please enter a valid name."
-        : "",
-      lastName: formData.lastName === "" ? "Please enter your last name." : "",
-      district:
-        formData.district === "" ? "Please enter a valid district." : "",
-      address: formData.address === "" ? "Please enter a valid address." : "",
-      reference:
-        formData.reference === "" ? "Please enter a valid reference." : "",
-      phone: !formData.phone.match(/^\d{7,}$/)
-        ? "Please enter a valid phone number."
-        : "",
+    const newErrors: FormErrors = {
+      name: "",
+      lastName: "",
+      district: "",
+      address: "",
+      reference: "",
+      phone: ""
     };
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required.";
+    } else if (!textRegex.test(formData.name)) {
+      newErrors.name = "Please enter a valid name.";
+    }
+
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = "Last name is required.";
+    }
+
+    if (!formData.district.trim()) {
+      newErrors.district = "District is required.";
+    }
+
+    if (!formData.address.trim()) {
+      newErrors.address = "Address is required.";
+    }
+
+    if (!formData.reference.trim()) {
+      newErrors.reference = "Reference is required.";
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone is required.";
+    } else if (!numberRegex.test(formData.phone)) {
+      newErrors.phone = "Please enter a valid phone number.";
+    }
 
     setErrors(newErrors);
     return Object.values(newErrors).every((value) => value === "");
@@ -56,23 +103,22 @@ const CheckoutForm: FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
+  
     if (validate()) {
       console.log("Order submitted:", formData);
-
+  
       openModal();
-
-      // se podr'ia crear una accion para limpiar todo el carrito y no iterar para limpiarlo
-      cartContext?.cart.forEach((product) =>
-        cartContext.removeFromCart(product.id)
-      );
+  
+      if (cartState && cartDispatch) {
+        clearCart();
+      }
     }
   };
+  
 
   const handleCloseModal = () => {
     closeModal();
-    // usar enum
-    navigate("/");
+    navigate(AppRoutes.Home);
   };
 
   return (
@@ -117,17 +163,20 @@ const CheckoutForm: FC = () => {
           <label htmlFor="district" className="checkout-form-label">
             District
           </label>
-          <input
-            type="text"
-            className="checkout-form-input"
-            id="district"
-            name="district"
-            value={formData.district}
-            onChange={(e) =>
-              setFormData({ ...formData, district: e.target.value })
-            }
-            placeholder="District"
-          />
+          <select
+              id="district"
+              name="district"
+              value={formData.district}
+              onChange={(e) => setFormData({ ...formData, district: e.target.value })}
+              className="checkout-form-input"
+            >
+              <option value="">Select a district</option>
+              {districts.map((district) => (
+                <option key={district.id} value={district.name}>
+                  {district.name}
+                </option>
+              ))}
+            </select>
           {errors.district && <div className="error">{errors.district}</div>}
         </div>
 

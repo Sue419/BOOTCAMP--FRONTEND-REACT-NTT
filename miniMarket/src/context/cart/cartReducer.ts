@@ -35,6 +35,11 @@ export const cartReducer = (state: CartState, action: CartAction): CartState => 
             : product
         ),
       };
+      case 'CLEAR_CART':
+      return {
+        ...state,
+        cart: [],
+      };
     default:
       throw new Error('Unknown action type');
   }

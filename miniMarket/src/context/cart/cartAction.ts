@@ -23,11 +23,16 @@ export const useCartActions = () => {
     dispatch({ type: 'DECREMENT', payload: { productId } });
   };
 
+  const clearCart = () => {
+    dispatch({ type: 'CLEAR_CART' });
+  };
+
   return {
     cart,
     addToCart,
     removeFromCart,
     incrementQuantity,
     decrementQuantity,
+    clearCart,
   };
 };

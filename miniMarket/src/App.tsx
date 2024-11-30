@@ -1,18 +1,17 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/home/home";
 import Checkout from "./pages/checkout/checkout";
+import { AppRoutes } from "./constants/routes";
 import './App.css'
 
 function App() {
 
-
-  // usar enum para paths
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path={AppRoutes.Home} element={<HomePage />} />
+          <Route path={AppRoutes.Checkout} element={<Checkout />} />
         </Routes>
     </Router>
     </>

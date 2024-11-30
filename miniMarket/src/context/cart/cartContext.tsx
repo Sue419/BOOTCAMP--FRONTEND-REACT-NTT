@@ -22,7 +22,6 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
 
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
-  // Sincroniza estado del carrito con localStorage
   useEffect(() => {
     setStoredCart(state);
   }, [state, setStoredCart]);
