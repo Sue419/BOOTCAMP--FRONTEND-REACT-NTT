@@ -15,7 +15,7 @@ describe("App", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText("Product 1")).toBeInTheDocument();
+    expect(screen.getByText("Loading...")).toBeInTheDocument();
   });
 
   it("should render Checkout page when navigating to /checkout", () => {

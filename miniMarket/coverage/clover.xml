@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1733028093857" clover="3.2.0">
-  <project timestamp="1733028093857" name="All files">
-    <metrics statements="262" coveredstatements="244" conditionals="52" coveredconditionals="39" methods="78" coveredmethods="66" elements="392" coveredelements="349" complexity="0" loc="262" ncloc="262" packages="15" files="28" classes="28"/>
+<coverage generated="1733029638519" clover="3.2.0">
+  <project timestamp="1733029638520" name="All files">
+    <metrics statements="271" coveredstatements="253" conditionals="52" coveredconditionals="39" methods="81" coveredmethods="67" elements="404" coveredelements="359" complexity="0" loc="271" ncloc="271" packages="16" files="29" classes="29"/>
     <package name="components.SummaryCart">
       <metrics statements="17" coveredstatements="11" conditionals="2" coveredconditionals="1" methods="10" coveredmethods="4"/>
       <file name="summaryCart.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\SummaryCart\summaryCart.tsx">
@@ -135,19 +135,19 @@
       </file>
       <file name="cartContext.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\context\cart\cartContext.tsx">
         <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
-        <line num="6" count="5" type="stmt"/>
-        <line num="7" count="5" type="stmt"/>
-        <line num="13" count="5" type="stmt"/>
-        <line num="15" count="5" type="stmt"/>
-        <line num="16" count="11" type="stmt"/>
-        <line num="21" count="11" type="cond" truecount="1" falsecount="1"/>
-        <line num="23" count="11" type="stmt"/>
-        <line num="25" count="11" type="stmt"/>
-        <line num="26" count="9" type="stmt"/>
-        <line num="29" count="11" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="16" count="13" type="stmt"/>
+        <line num="21" count="13" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="13" type="stmt"/>
+        <line num="25" count="13" type="stmt"/>
+        <line num="26" count="11" type="stmt"/>
+        <line num="29" count="13" type="stmt"/>
       </file>
       <file name="cartHooks.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\context\cart\cartHooks.ts">
         <metrics statements="12" coveredstatements="11" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
@@ -166,7 +166,7 @@
       </file>
       <file name="cartReducer.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\context\cart\cartReducer.ts">
         <metrics statements="13" coveredstatements="12" conditionals="11" coveredconditionals="8" methods="4" coveredmethods="4"/>
-        <line num="3" count="6" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
         <line num="5" count="8" type="cond" truecount="1" falsecount="0"/>
         <line num="6" count="1" type="stmt"/>
         <line num="9" count="7" type="cond" truecount="5" falsecount="1"/>
@@ -240,19 +240,19 @@
       </file>
       <file name="useLocalStorage.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\hooks\useLocalStorage.ts">
         <metrics statements="13" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-        <line num="1" count="6" type="stmt"/>
-        <line num="3" count="6" type="stmt"/>
-        <line num="4" count="13" type="stmt"/>
-        <line num="5" count="8" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
-        <line num="7" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="15" type="stmt"/>
+        <line num="5" count="10" type="stmt"/>
+        <line num="6" count="10" type="stmt"/>
+        <line num="7" count="10" type="cond" truecount="2" falsecount="0"/>
         <line num="9" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
-        <line num="14" count="13" type="stmt"/>
-        <line num="15" count="11" type="stmt"/>
-        <line num="16" count="11" type="stmt"/>
+        <line num="14" count="15" type="stmt"/>
+        <line num="15" count="13" type="stmt"/>
+        <line num="16" count="13" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
-        <line num="22" count="13" type="stmt"/>
+        <line num="22" count="15" type="stmt"/>
       </file>
       <file name="useModal.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\hooks\useModal.ts">
         <metrics statements="10" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
@@ -330,6 +330,21 @@
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
         <line num="9" count="5" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="pages.checkout">
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <file name="checkout.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\pages\checkout\checkout.tsx">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
       </file>
     </package>
     <package name="proxy">
