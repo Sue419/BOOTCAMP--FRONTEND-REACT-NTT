@@ -28,8 +28,8 @@ describe("App", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText("Header")).toBeInTheDocument();
+    expect(screen.getByRole("navigation")).toBeInTheDocument();
     expect(screen.getByText("CheckoutMain")).toBeInTheDocument();
-    expect(screen.getByText("Footer")).toBeInTheDocument();
+    expect(screen.getByRole("contentinfo")).toBeInTheDocument();
   });
 });
