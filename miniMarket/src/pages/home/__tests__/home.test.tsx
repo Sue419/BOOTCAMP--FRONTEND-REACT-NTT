@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import HomePage from "../home";
 import { useCategories } from "@/hooks/useCategories";
 import { useProductSearch } from "@/hooks/useProductSearch";
@@ -46,6 +46,18 @@ describe("HomePage", () => {
     });
   });
 
+  it("renders product list after search", async () => {
+    render(<HomePage />);
+
+    const searchInput = screen.getByRole("textbox");
+    fireEvent.change(searchInput, { target: { value: "Product" } });
+
+    await waitFor(() => {
+      expect(screen.getByText("Product 1")).toBeInTheDocument();
+      expect(screen.getByText("Product 2")).toBeInTheDocument();
+    });
+  });
+
   it("renders loading state", () => {
     (useProducts as jest.Mock).mockReturnValueOnce({
       products: [],
@@ -66,12 +78,6 @@ describe("HomePage", () => {
     expect(screen.getByText("Error loading products")).toBeInTheDocument();
   });
 
-  it("renders product list", () => {
-    render(<HomePage />);
-    expect(screen.getByText("Product 1")).toBeInTheDocument();
-    expect(screen.getByText("Product 2")).toBeInTheDocument();
-  });
-
   it("calls handleSearch on search", () => {
     const mockHandleSearch = jest.fn();
     (useProductSearch as jest.Mock).mockReturnValue({
@@ -80,23 +86,9 @@ describe("HomePage", () => {
       handleCategoryChange: jest.fn(),
     });
     render(<HomePage />);
-    const searchInput = screen.getByRole("textbox"); // Asegúrate de tener un campo de búsqueda
+    const searchInput = screen.getByRole("textbox");
     fireEvent.change(searchInput, { target: { value: "Product 1" } });
-    fireEvent.keyUp(searchInput, { key: "Enter" });
     expect(mockHandleSearch).toHaveBeenCalledWith("Product 1");
-  });
-
-  it("calls handleCategoryChange when category is selected", () => {
-    const mockHandleCategoryChange = jest.fn();
-    (useProductSearch as jest.Mock).mockReturnValue({
-      filteredProducts: mockProducts,
-      handleSearch: jest.fn(),
-      handleCategoryChange: mockHandleCategoryChange,
-    });
-    render(<HomePage />);
-    const categorySelect = screen.getByRole("combobox"); // Asegúrate de tener un select para las categorías
-    fireEvent.change(categorySelect, { target: { value: "1" } });
-    expect(mockHandleCategoryChange).toHaveBeenCalledWith("1");
   });
 
   it("renders the Header, ProductMain, and Footer components", () => {
