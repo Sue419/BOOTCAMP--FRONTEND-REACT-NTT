@@ -4,7 +4,7 @@ import { CartStateContext, CartDispatchContext } from "@/context/cart/cartContex
 import ModalSuccess from "../modalSuccess/modalSuccess";
 import { useModal } from "../../hooks/useModal";
 import { Button } from "../shared/button/button";
-import { textRegex, numberRegex } from "@/utils/regexValidators";
+import { textRegex, numberRegex } from "@/constants/regexValidators";
 import useDistricts from "@/hooks/useDistricts";
 import { useCartActions } from "@/context/cart/cartAction";
 import { AppRoutes } from "@/constants/routes";

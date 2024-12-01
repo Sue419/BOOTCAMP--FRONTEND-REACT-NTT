@@ -1,9 +1,8 @@
-import { useCartActions } from "@/context/cart/cartAction";
+import { useCartActions } from "@/context/cart/cartAction"; 
 import { calculateDiscountedPrice } from "../../utils/discount";
 import "./sumaryCart.css";
 
 const SummaryCart = () => {
-
   const { cart, incrementQuantity, decrementQuantity, removeFromCart } = useCartActions();
   
   const total = (cart ?? []).reduce(
@@ -19,7 +18,6 @@ const SummaryCart = () => {
       <h1 className="summarycart-title">Shopping Cart Summary</h1>
 
       <div className="summarycart-table-container">
-        {/* Desktop View: Table */}
         <table className="desktop-table">
           <thead>
             <tr>
@@ -46,12 +44,14 @@ const SummaryCart = () => {
                     <button
                       className="quantity-button"
                       onClick={() => decrementQuantity(product.id)}
+                      data-testid={`decrement-button-desktop-${product.id}`}
                     >
                       -
                     </button>
                     {product.quantity}
                     <button
                       className="quantity-button"
+                      data-testid={`increment-button-desktop-${product.id}`}
                       onClick={() => incrementQuantity(product.id)}
                     >
                       +
@@ -69,6 +69,7 @@ const SummaryCart = () => {
                   <button
                     className="remove-button"
                     onClick={() => removeFromCart(product.id)}
+                    data-testid={`remove-button-desktop-${product.id}`}
                   >
                     Remove
                   </button>
@@ -78,7 +79,6 @@ const SummaryCart = () => {
           </tbody>
         </table>
 
-        {/* Mobile View: Cards */}
         <div className="mobile-cart">
           {cart.map((product) => (
             <div key={product.id} className="summarycart-item">
@@ -93,6 +93,7 @@ const SummaryCart = () => {
                   <button
                     className="remove-button"
                     onClick={() => removeFromCart(product.id)}
+                    data-testid={`remove-button-mobile-${product.id}`}
                   >
                     Remove
                   </button>
@@ -103,6 +104,7 @@ const SummaryCart = () => {
                   <button
                     className="quantity-button"
                     onClick={() => decrementQuantity(product.id)}
+                    data-testid={`decrement-button-mobile-${product.id}`}
                   >
                     -
                   </button>
@@ -110,6 +112,7 @@ const SummaryCart = () => {
                   <button
                     className="quantity-button"
                     onClick={() => incrementQuantity(product.id)}
+                    data-testid={`increment-button-mobile-${product.id}`}
                   >
                     +
                   </button>

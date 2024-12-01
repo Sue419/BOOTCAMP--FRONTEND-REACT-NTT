@@ -11,7 +11,7 @@ export async function fetchProducts(): Promise<Product[]> {
         const products = data.products.map(mapperGetProducts); 
         return products;
     } catch (error) {
-        console.error("Error al obtener productos:", error);
+        console.log({error});
         return [];
     }
 }

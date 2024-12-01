@@ -48,7 +48,9 @@ const CategorySelector: FC<CategorySelectorProps> = ({
             key={category.slug}
             onClick={() => {
               onCategorySelect(category.slug);
-              toggleMenu?.();
+              if (toggleMenu) {
+                toggleMenu();
+              }
             }}
           >
             {category.name}

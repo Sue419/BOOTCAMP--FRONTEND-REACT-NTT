@@ -8,26 +8,29 @@ interface District {
 const useDistricts = () => {
   const [districts, setDistricts] = useState<District[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [error] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchDistricts = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch('./src/data/districts.json');
+      if (!response.ok) {
+        throw new Error('Failed to load districts');
+      }
+      const data: District[] = await response.json();
+      setDistricts(data);
+      setLoading(false);
+    } catch {
+      setError('Error loading districts');
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchDistricts = async () => {
-      try {
-        const response = await fetch('./src/data/districts.json');
-        if (!response.ok) {
-          throw new Error('Failed to load districts');
-        }
-        const data: District[] = await response.json();
-        setDistricts(data);
-      } catch {
-        setLoading(false);
-      }
-    };
-
     fetchDistricts();
   }, []);
 
-  return { districts, loading, error };
+  return { districts, loading, error, fetchDistricts };
 };
 
 export default useDistricts;

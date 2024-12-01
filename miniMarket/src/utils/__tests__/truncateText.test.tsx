@@ -1,4 +1,4 @@
-import { truncateText } from './truncateText';
+import { truncateText } from '../truncateText';
 
 describe('truncateText', () => {
   it('should truncate text and add "..." if longer than maxLength', () => {
