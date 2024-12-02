@@ -8,7 +8,7 @@ jest.mock('../../proxy/fetchProducts', () => ({
 
 describe('useProducts', () => {
   it('should load products', async () => {
-    const mockProducts = [{ id: 1, name: 'Product 1' }];
+    const mockProducts = [{ id: 1, title: 'Product 1' }];
     (fetchProducts.fetchProducts as jest.Mock).mockResolvedValue(mockProducts);
 
     const { result } = renderHook(() => useProducts());
