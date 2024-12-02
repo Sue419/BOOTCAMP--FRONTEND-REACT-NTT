@@ -7,6 +7,7 @@ import { useModal } from '@/hooks/useModal';
 import { validateLoginForm, handleLoginRequest } from '@/logic/validateLoginForm';
 import { emailRegex } from '@/constants/regexValidators';
 import { AppRoutes } from '@/constants/routes';
+import Modal from '@/components/shared/modal/modal';
 
 const LoginPage: FC = () => {
   const [username, setUsername] = useState('');
@@ -98,35 +99,22 @@ const LoginPage: FC = () => {
         </a>
       </div>
 
-      {/* Primer Modal: Ingreso de correo */}
-      {showResetModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <h2>Reset Password</h2>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <button onClick={handleResetPassword}>Send Reset Link</button>
-            <button onClick={closeResetModal}>Cancel</button>
+      <Modal isVisible={showResetModal} onClose={closeResetModal} title="Reset Password">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <button onClick={handleResetPassword}>Send Reset Link</button>
+          {resetErrorMessage && 
+          <p className="error-message">{resetErrorMessage}</p>}
+      </Modal>
 
-            {resetErrorMessage && <p className="error-message">{resetErrorMessage}</p>}
-          </div>
-        </div>
-      )}
+      <Modal isVisible={showSuccessModal} onClose={closeSuccessModal} title="Password Reset Sent">
+          <p>The information was sent to the entered email.</p>
+      </Modal>
 
-      {/* Segundo Modal: Mensaje de éxito */}
-      {showSuccessModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <h2>Password Reset Request Sent</h2>
-            <p>Se envió la información al correo ingresado.</p>
-            <button onClick={closeSuccessModal}>Close</button>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
