@@ -19,13 +19,12 @@ describe('useProducts', () => {
   });
 
   it('should handle error loading products', async () => {
-    (fetchProducts.fetchProducts as jest.Mock).mockRejectedValue(new Error('Failed to fetch'));
-
+    (fetchProducts.fetchProducts as jest.Mock).mockRejectedValueOnce(new Error('Failed to fetch'));
+  
     const { result } = renderHook(() => useProducts());
-
-    await waitFor(() => result.current.error);
-
-    expect(result.current.error).toBe('Error loading products');
+  
+    await waitFor(() => expect(result.current.error).toBe('Error loading products'));
+  
     expect(result.current.loading).toBe(false);
   });
 });

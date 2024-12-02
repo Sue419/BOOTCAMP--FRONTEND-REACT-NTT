@@ -15,7 +15,7 @@ const SummaryCart = () => {
 
   return (
     <div className="summarycart-container">
-      <h1 className="summarycart-title">Shopping Cart Summary</h1>
+      <h1 className="summarycart-title" role="heading">Shopping Cart Summary</h1>
 
       <div className="summarycart-table-container">
         <table className="desktop-table">

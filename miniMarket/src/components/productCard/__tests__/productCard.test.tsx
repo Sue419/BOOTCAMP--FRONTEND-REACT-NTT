@@ -3,6 +3,7 @@ import ProductCard from '../productCard';
 import { Product } from '@/domain/product';
 import { CartProvider } from '@/context/cart/cartContext';
 
+// Mock utils
 jest.mock('../../../utils/truncateText');
 jest.mock('../../../utils/discount');
 
@@ -22,7 +23,9 @@ describe('ProductCard', () => {
 
     it('should render the product card with correct information', () => {
         render(
-            <ProductCard product={product} />
+            <CartProvider>
+                <ProductCard product={product} />
+            </CartProvider>
         );
 
         expect(screen.getByText(product.title)).toBeInTheDocument();
@@ -35,7 +38,7 @@ describe('ProductCard', () => {
                 <ProductCard product={product} />
             </CartProvider>
         );
-    
+
         const button = await screen.findByText(/Add to cart/i);
         expect(button).toBeInTheDocument();
     });

@@ -18,7 +18,10 @@ export const useCategories = () => {
     };
 
     loadCategories();
+
+    
   }, []);
+
 
   return { categories, defaultCategory: DEFAULT_CATEGORY };
 };

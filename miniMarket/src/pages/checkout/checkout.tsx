@@ -17,7 +17,7 @@ const Checkout: FC = () => {
           categories={categories}
           isCheckoutPage={true}
         />
-        <CheckoutMain/>
+        <CheckoutMain />
         <Footer />
       </CartProvider>
     </div>

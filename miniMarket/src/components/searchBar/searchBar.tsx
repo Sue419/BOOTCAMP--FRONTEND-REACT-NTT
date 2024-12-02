@@ -26,6 +26,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch, id }) => {
   return (
     <div className="search">
       <input
+        role="textbox"
         type="search"
         id= {id}
         name="search"
@@ -33,6 +34,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch, id }) => {
         className="search-input"
         value={query}
         onChange={handleInputChange}
+        
       />
       <button className="search-button" type="button">
         <img src="./src/assets/icons/magnifying_glass.svg" alt="Buscar" />

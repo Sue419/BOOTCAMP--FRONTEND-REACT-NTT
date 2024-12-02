@@ -40,10 +40,10 @@ const Header: FC<HeaderProps> = ({
   };
 
   return (
-    <header className="header-container">
+    <header className="header-container" role="navigation">
       <div className="header-top">
         {isMobile && !isCheckoutPage && (
-          <button className="menu-button" onClick={toggleSidebar}>
+          <button className="menu-button" onClick={toggleSidebar} role="button">
             &#9776;
           </button>
         )}
@@ -63,7 +63,7 @@ const Header: FC<HeaderProps> = ({
         <div className="search-and-icons">
           {!isMobile && !isCheckoutPage && (
             <div className="desktop-search">
-              <SearchBar onSearch={onSearch} id="desktop-search-input" />
+              <SearchBar onSearch={onSearch} id="desktop-search-input"/>
             </div>
           )}
           <div className="icons">
@@ -78,7 +78,7 @@ const Header: FC<HeaderProps> = ({
       {!isCheckoutPage && (
         <>
           <div className="mobile-search">
-            {isMobile && (
+            {isMobile && !isCheckoutPage && (
               <SearchBar onSearch={onSearch} id="mobile-search-input" />
             )}
           </div>

@@ -4,6 +4,7 @@ import { Product } from "../../domain/product";
 
 interface ProductMainProps {
   products: Product[];
+  role?: string;
 }
 
 const ProductMain: FC<ProductMainProps> = ({ products }) => {

@@ -29,7 +29,7 @@ const HomePage: FC = () => {
         categories={categories}
         isCheckoutPage={false}
       />
-      <ProductMain products={filteredProducts} />
+      <ProductMain products={filteredProducts} role="main"/>
       <Footer />
     </CartProvider>
   );
