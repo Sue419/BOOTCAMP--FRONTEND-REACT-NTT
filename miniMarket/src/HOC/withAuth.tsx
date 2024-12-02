@@ -10,7 +10,7 @@ export const withAuth = <P extends object>(Component: React.ComponentType<P>) =>
 
     useEffect(() => {
       if (!state.token) {
-        navigate(AppRoutes.Home);
+        navigate(AppRoutes.Login);
       }
     }, [state.token, navigate]);
 
