@@ -25,9 +25,9 @@ describe("CheckoutPage", () => {
 
   it("does not render the search bar or category selection", () => {
     render(
-      <MemoryRouter initialEntries={["/checkout"]}> {/* Usar MemoryRouter para simular la ruta */}
+      <MemoryRouter initialEntries={[AppRoutes.Checkout]}>
         <Routes>
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path={AppRoutes.Checkout} element={<Checkout />} />
         </Routes>
       </MemoryRouter>
     );
@@ -41,7 +41,7 @@ describe("CheckoutPage", () => {
     global.innerWidth = 375;
     global.dispatchEvent(new Event("resize"));
     render(
-      <MemoryRouter initialEntries={["/checkout"]}> {/* Usar MemoryRouter para simular la ruta */}
+      <MemoryRouter initialEntries={["/checkout"]}>
         <Routes>
           <Route path="/checkout" element={<Checkout />} />
         </Routes>

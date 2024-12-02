@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1733101624735" clover="3.2.0">
-  <project timestamp="1733101624735" name="All files">
+<coverage generated="1733103504586" clover="3.2.0">
+  <project timestamp="1733103504586" name="All files">
     <metrics statements="284" coveredstatements="271" conditionals="54" coveredconditionals="41" methods="74" coveredmethods="66" elements="412" coveredelements="378" complexity="0" loc="284" ncloc="284" packages="18" files="31" classes="31"/>
     <package name="components.buttonCard">
       <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
@@ -107,11 +107,11 @@
       <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="routes.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\constants\routes.ts">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="1" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
+        <line num="1" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
       </file>
     </package>
     <package name="context.cart">
@@ -219,8 +219,8 @@
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
@@ -228,7 +228,7 @@
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
         <line num="20" count="2" type="stmt"/>
-        <line num="26" count="4" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
       </file>
       <file name="useDebounce.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\hooks\useDebounce.ts">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
