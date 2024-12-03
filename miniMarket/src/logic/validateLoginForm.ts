@@ -26,7 +26,7 @@ export const handleLoginRequest = async (username: string, password: string) => 
       localStorage.setItem("authUser", JSON.stringify(response.user));
       return response;
     }
-  } catch (error) {
+  } catch {
     throw new Error("Authentication failed. Please try again.");
   }
 };

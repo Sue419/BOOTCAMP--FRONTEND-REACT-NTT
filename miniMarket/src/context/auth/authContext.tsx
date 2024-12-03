@@ -2,10 +2,13 @@ import React, { createContext, useReducer, ReactNode, useEffect } from "react";
 import { initialAuthState, authReducer } from "./authReducer";
 import { AuthState, AuthAction } from "./authTypes";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { logoutAction } from "./authAction";
 
-interface AuthContextProps {
+export interface AuthContextProps {
   state: AuthState;
   dispatch: React.Dispatch<AuthAction>;
+  logout: () => void;
+  user: AuthState["user"];
 }
 
 export const AuthContext = createContext<AuthContextProps | undefined>(undefined);
@@ -35,8 +38,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [state.token, state.user, setStoredToken, setStoredUser]);
 
+  const logout = () => {
+    dispatch(logoutAction());
+  };
+
   return (
-    <AuthContext.Provider value={{ state, dispatch }}>
+    <AuthContext.Provider value={{ state, dispatch, user: state.user, logout }}>
       {children}
     </AuthContext.Provider>
   );

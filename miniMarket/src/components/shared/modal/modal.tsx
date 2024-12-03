@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import './modal.css'
 
 interface ModalProps {
   isVisible: boolean;
@@ -15,7 +16,7 @@ const Modal: FC<ModalProps> = ({ isVisible, onClose, title, children }) => {
       <div className="modal-content">
         <h2>{title}</h2>
         <div>{children}</div>
-        <button onClick={onClose}>Close</button>
+        <button onClick={onClose} className="modal-close-button">Close</button>
       </div>
     </div>
   );

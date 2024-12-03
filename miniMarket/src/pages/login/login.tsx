@@ -8,6 +8,7 @@ import { validateLoginForm, handleLoginRequest } from '@/logic/validateLoginForm
 import { emailRegex } from '@/constants/regexValidators';
 import { AppRoutes } from '@/constants/routes';
 import Modal from '@/components/shared/modal/modal';
+import './login.css'
 
 const LoginPage: FC = () => {
   const [username, setUsername] = useState('');
@@ -44,21 +45,21 @@ const LoginPage: FC = () => {
 
       if (response && response.token) {
         dispatch({
-          type: "LOGIN_SUCCESS",
+          type: 'LOGIN_SUCCESS',
           payload: { user: response.user, token: response.token },
         });
         navigate(AppRoutes.Home);
       } else {
-        setErrorMessage("Invalid username or password, please try again.");
+        setErrorMessage('Invalid username or password, please try again.');
       }
     } catch (error: unknown) {
-      setErrorMessage(error instanceof Error ? error.message : "An unexpected error occurred.");
+      setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred.');
     }
   };
 
   const handleResetPassword = () => {
     if (!email.match(emailRegex)) {
-      setResetErrorMessage("Please enter a valid email address.");
+      setResetErrorMessage('Please enter a valid email address.');
       return;
     }
 
@@ -69,9 +70,13 @@ const LoginPage: FC = () => {
   };
 
   return (
-    <div className="login-page">
-      <h1>Login</h1>
-      <form onSubmit={handleLogin}>
+    <div className="login">
+      <div className="login__logo">
+          <img src="./src/assets/images/logo/white_logo.svg" alt="Logo de My Market" />
+          <h1 className='login__logo__title'>My Market</h1>
+      </div>
+      <h2 className="login__title">Login</h2>
+      <form className="login__form" onSubmit={handleLogin}>
         <Input
           id="username"
           label="Username"
@@ -79,6 +84,7 @@ const LoginPage: FC = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           errorMessage={errorUsername}
+          className="login__input"
         />
         <Input
           id="password"
@@ -87,34 +93,36 @@ const LoginPage: FC = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           errorMessage={errorPassword}
+          className="login__input"
         />
-        {errorMessage && <p>{errorMessage}</p>}
-        <Button onClick={handleLogin} className="btn-submit" role="submit">
+        {errorMessage && <p className="login__error-message">{errorMessage}</p>}
+        <Button onClick={handleLogin} className="login__button" role="submit">
           Login
         </Button>
       </form>
-      <div>
+      <div className="login__forgot-password">
         <a href="#" onClick={openResetModal}>
           Forgot Password?
         </a>
       </div>
 
       <Modal isVisible={showResetModal} onClose={closeResetModal} title="Reset Password">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <button onClick={handleResetPassword}>Send Reset Link</button>
-          {resetErrorMessage && 
-          <p className="error-message">{resetErrorMessage}</p>}
+        <input
+          className="login__reset-input"
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <button className="login__reset-button" onClick={handleResetPassword}>
+          Send Reset Link
+        </button>
+        {resetErrorMessage && <p className="login__error-message">{resetErrorMessage}</p>}
       </Modal>
 
       <Modal isVisible={showSuccessModal} onClose={closeSuccessModal} title="Password Reset Sent">
-          <p>The information was sent to the entered email.</p>
+        <p>The information was sent to the entered email.</p>
       </Modal>
-
     </div>
   );
 };

@@ -1,0 +1,57 @@
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Estilo para las etiquetas */
+.input-field label {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  font-weight: bold;
+}
+
+/* Estilo base para el input */
+.input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+}
+
+/* Estilo para los errores */
+.error {
+  font-size: 0.875rem;
+  color: var(--color-danger);
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .input {
+    font-size: 1rem;
+  }
+
+  .input-field label {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .input {
+    font-size: 1.125rem;
+  }
+
+  .input-field {
+    max-width: 400px;
+    margin-bottom: 1.5rem;
+  }
+}

@@ -21,6 +21,9 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     animation: slideIn 0.5s ease-out;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
   }
   
   .modal-content h3 {

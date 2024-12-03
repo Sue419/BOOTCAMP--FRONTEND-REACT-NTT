@@ -1,10 +1,12 @@
-import { FC, useState, } from "react";
+import { FC, useState } from "react";
 import { Category } from "../../domain/category";
 import SearchBar from "../searchBar/searchBar";
 import CategoryDropdown from "../dropdownSelect/dropdown";
 import Sidebar from "../sidebarMenu/sidebar";
 import CartIcon from "../cartIcon/cartIcon";
 import useResponsive from "@/hooks/useResponsive";
+import { useAuth } from "@/hooks/useAuth";
+
 import "./header.css";
 
 const DEFAULT_CATEGORY = "All categories";
@@ -25,6 +27,8 @@ const Header: FC<HeaderProps> = ({
   const isMobile = useResponsive(768);
   const [selectedCategory, setSelectedCategory] = useState(DEFAULT_CATEGORY);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const { user, logout } = useAuth();
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
@@ -37,6 +41,14 @@ const Header: FC<HeaderProps> = ({
 
   const closeSidebar = () => {
     setIsSidebarOpen(false);
+  };
+
+  const toggleUserMenu = () => {
+    setIsUserMenuOpen(!isUserMenuOpen);
+  };
+
+  const handleLogout = () => {
+    logout();
   };
 
   return (
@@ -63,13 +75,21 @@ const Header: FC<HeaderProps> = ({
         <div className="search-and-icons">
           {!isMobile && !isCheckoutPage && (
             <div className="desktop-search">
-              <SearchBar onSearch={onSearch} id="desktop-search-input"/>
+              <SearchBar onSearch={onSearch} id="desktop-search-input" />
             </div>
           )}
           <div className="icons">
+              <p className="user-name">{`Hola, ${user?.firstName}`}</p>
+
+
             <CartIcon />
-            <div className="user-icon">
+            <div className="user-icon" onClick={toggleUserMenu}>
               <img src="./src/assets/icons/user.svg" alt="Usuario" />
+              {isUserMenuOpen && (
+                <div className="user-menu">
+                  <button onClick={handleLogout}>Cerrar sesión</button>
+                </div>
+              )}
             </div>
           </div>
         </div>
