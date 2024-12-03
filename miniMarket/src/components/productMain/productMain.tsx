@@ -10,7 +10,7 @@ interface ProductMainProps {
 const ProductMain: FC<ProductMainProps> = ({ products }) => {
   return (
     <main className="main-container">
-      <ProductList products={products} />
+      <ProductList products={products} itemsPerPage={6} />
     </main>
   );
 };
