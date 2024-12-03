@@ -124,8 +124,8 @@ const CheckoutForm: FC = () => {
   return (
     <div className="checkout-form">
       <h2>Shipping Form</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="input-group">
+      <form className="form-checkout" onSubmit={handleSubmit}>
+        <div className="input-group-form">
           <label htmlFor="name" className="checkout-form-label">
             Name
           </label>
@@ -141,7 +141,7 @@ const CheckoutForm: FC = () => {
           {errors.name && <div className="error">{errors.name}</div>}
         </div>
 
-        <div className="input-group">
+        <div className="input-group-form">
           <label htmlFor="lastName" className="checkout-form-label">
             Last Name
           </label>
@@ -159,7 +159,7 @@ const CheckoutForm: FC = () => {
           {errors.lastName && <div className="error">{errors.lastName}</div>}
         </div>
 
-        <div className="input-group">
+        <div className="input-group-form">
           <label htmlFor="district" className="checkout-form-label">
             District
           </label>
@@ -180,7 +180,7 @@ const CheckoutForm: FC = () => {
           {errors.district && <div className="error">{errors.district}</div>}
         </div>
 
-        <div className="input-group">
+        <div className="input-group-form">
           <label htmlFor="address" className="checkout-form-label">
             Address
           </label>
@@ -198,7 +198,7 @@ const CheckoutForm: FC = () => {
           {errors.address && <div className="error">{errors.address}</div>}
         </div>
 
-        <div className="input-group">
+        <div className="input-group-form">
           <label htmlFor="reference" className="checkout-form-label">
             Reference
           </label>
@@ -216,7 +216,7 @@ const CheckoutForm: FC = () => {
           {errors.reference && <div className="error">{errors.reference}</div>}
         </div>
 
-        <div className="input-group">
+        <div className="input-group-form">
           <label htmlFor="phone" className="checkout-form-label">
             Phone
           </label>
