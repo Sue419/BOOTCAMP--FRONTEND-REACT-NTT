@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1733111670383" clover="3.2.0">
-  <project timestamp="1733111670384" name="All files">
+<coverage generated="1734024844421" clover="3.2.0">
+  <project timestamp="1734024844421" name="All files">
     <metrics statements="477" coveredstatements="390" conditionals="109" coveredconditionals="62" methods="120" coveredmethods="80" elements="706" coveredelements="532" complexity="0" loc="477" ncloc="477" packages="28" files="44" classes="44"/>
     <package name="components.SummaryCart">
       <metrics statements="17" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="10" coveredmethods="1"/>
-      <file name="summaryCart.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\SummaryCart\summaryCart.tsx">
+      <file name="summaryCart.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/SummaryCart/summaryCart.tsx">
         <metrics statements="17" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="10" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -27,7 +27,7 @@
     </package>
     <package name="components.buttonCard">
       <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <file name="buttonCard.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\buttonCard\buttonCard.tsx">
+      <file name="buttonCard.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/buttonCard/buttonCard.tsx">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="2" count="4" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
@@ -43,7 +43,7 @@
     </package>
     <package name="components.cartIcon">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="cartIcon.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\cartIcon\cartIcon.tsx">
+      <file name="cartIcon.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/cartIcon/cartIcon.tsx">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -57,7 +57,7 @@
     </package>
     <package name="components.categorySelector">
       <metrics statements="12" coveredstatements="12" conditionals="5" coveredconditionals="4" methods="6" coveredmethods="6"/>
-      <file name="categorySelector.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\categorySelector\categorySelector.tsx">
+      <file name="categorySelector.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/categorySelector/categorySelector.tsx">
         <metrics statements="12" coveredstatements="12" conditionals="5" coveredconditionals="4" methods="6" coveredmethods="6"/>
         <line num="14" count="3" type="stmt"/>
         <line num="22" count="9" type="cond" truecount="1" falsecount="0"/>
@@ -75,7 +75,7 @@
     </package>
     <package name="components.checkoutForm">
       <metrics statements="59" coveredstatements="25" conditionals="26" coveredconditionals="6" methods="12" coveredmethods="1"/>
-      <file name="Form.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\checkoutForm\Form.tsx">
+      <file name="Form.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/checkoutForm/Form.tsx">
         <metrics statements="59" coveredstatements="25" conditionals="26" coveredconditionals="6" methods="12" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -140,7 +140,7 @@
     </package>
     <package name="components.checkoutMain">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="checkoutMain.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\checkoutMain\checkoutMain.tsx">
+      <file name="checkoutMain.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/checkoutMain/checkoutMain.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -151,7 +151,7 @@
     </package>
     <package name="components.dropdownSelect">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="dropdown.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\dropdownSelect\dropdown.tsx">
+      <file name="dropdown.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/dropdownSelect/dropdown.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
@@ -162,7 +162,7 @@
     </package>
     <package name="components.footer">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="footer.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\footer\footer.tsx">
+      <file name="footer.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/footer/footer.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -172,7 +172,7 @@
     </package>
     <package name="components.header">
       <metrics statements="21" coveredstatements="17" conditionals="14" coveredconditionals="9" methods="4" coveredmethods="1"/>
-      <file name="header.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\header\header.tsx">
+      <file name="header.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/header/header.tsx">
         <metrics statements="21" coveredstatements="17" conditionals="14" coveredconditionals="9" methods="4" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -199,7 +199,7 @@
     </package>
     <package name="components.modalSuccess">
       <metrics statements="5" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="modalSuccess.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\modalSuccess\modalSuccess.tsx">
+      <file name="modalSuccess.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/modalSuccess/modalSuccess.tsx">
         <metrics statements="5" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="2" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
@@ -210,7 +210,7 @@
     </package>
     <package name="components.productCard">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="productCard.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\productCard\productCard.tsx">
+      <file name="productCard.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/productCard/productCard.tsx">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="3" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
@@ -223,7 +223,7 @@
     </package>
     <package name="components.productList">
       <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-      <file name="productList.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\productList\productList.tsx">
+      <file name="productList.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/productList/productList.tsx">
         <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
@@ -235,7 +235,7 @@
     </package>
     <package name="components.productMain">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="productMain.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\productMain\productMain.tsx">
+      <file name="productMain.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/productMain/productMain.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="2" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
@@ -245,7 +245,7 @@
     </package>
     <package name="components.searchBar">
       <metrics statements="13" coveredstatements="11" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="2"/>
-      <file name="searchBar.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\searchBar\searchBar.tsx">
+      <file name="searchBar.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/searchBar/searchBar.tsx">
         <metrics statements="13" coveredstatements="11" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -264,7 +264,7 @@
     </package>
     <package name="components.shared.button">
       <metrics statements="2" coveredstatements="2" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="button.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\shared\button\button.tsx">
+      <file name="button.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/shared/button/button.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="7" count="6" type="stmt"/>
         <line num="13" count="17" type="stmt"/>
@@ -272,7 +272,7 @@
     </package>
     <package name="components.shared.iconButton">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="iconButton.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\shared\iconButton\iconButton.tsx">
+      <file name="iconButton.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/shared/iconButton/iconButton.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="9" count="3" type="stmt"/>
         <line num="16" count="10" type="stmt"/>
@@ -281,7 +281,7 @@
     </package>
     <package name="components.sidebarMenu">
       <metrics statements="15" coveredstatements="10" conditionals="4" coveredconditionals="2" methods="5" coveredmethods="1"/>
-      <file name="sidebar.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\components\sidebarMenu\sidebar.tsx">
+      <file name="sidebar.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/components/sidebarMenu/sidebar.tsx">
         <metrics statements="15" coveredstatements="10" conditionals="4" coveredconditionals="2" methods="5" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -302,12 +302,12 @@
     </package>
     <package name="constants">
       <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <file name="regexValidators.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\constants\regexValidators.ts">
+      <file name="regexValidators.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/constants/regexValidators.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
       </file>
-      <file name="routes.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\constants\routes.ts">
+      <file name="routes.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/constants/routes.ts">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="5" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="5" type="stmt"/>
@@ -318,7 +318,7 @@
     </package>
     <package name="context.cart">
       <metrics statements="54" coveredstatements="46" conditionals="17" coveredconditionals="10" methods="14" coveredmethods="9"/>
-      <file name="cartAction.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\context\cart\cartAction.ts">
+      <file name="cartAction.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/context/cart/cartAction.ts">
         <metrics statements="16" coveredstatements="11" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="1"/>
         <line num="1" count="3" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
@@ -337,7 +337,7 @@
         <line num="27" count="0" type="stmt"/>
         <line num="30" count="7" type="stmt"/>
       </file>
-      <file name="cartContext.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\context\cart\cartContext.tsx">
+      <file name="cartContext.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/context/cart/cartContext.tsx">
         <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
         <line num="1" count="9" type="stmt"/>
         <line num="3" count="9" type="stmt"/>
@@ -353,7 +353,7 @@
         <line num="26" count="20" type="stmt"/>
         <line num="29" count="22" type="stmt"/>
       </file>
-      <file name="cartHooks.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\context\cart\cartHooks.ts">
+      <file name="cartHooks.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/context/cart/cartHooks.ts">
         <metrics statements="12" coveredstatements="10" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="3" type="stmt"/>
         <line num="3" count="3" type="stmt"/>
@@ -368,7 +368,7 @@
         <line num="17" count="0" type="stmt"/>
         <line num="19" count="7" type="stmt"/>
       </file>
-      <file name="cartReducer.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\context\cart\cartReducer.ts">
+      <file name="cartReducer.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/context/cart/cartReducer.ts">
         <metrics statements="13" coveredstatements="12" conditionals="11" coveredconditionals="8" methods="4" coveredmethods="4"/>
         <line num="3" count="10" type="stmt"/>
         <line num="5" count="8" type="cond" truecount="1" falsecount="0"/>
@@ -387,7 +387,7 @@
     </package>
     <package name="domain">
       <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
-      <file name="productApiResponse.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\domain\productApiResponse.ts">
+      <file name="productApiResponse.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/domain/productApiResponse.ts">
         <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="34" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="35" count="2" type="stmt"/>
@@ -402,7 +402,7 @@
     </package>
     <package name="hooks">
       <metrics statements="118" coveredstatements="108" conditionals="11" coveredconditionals="9" methods="31" coveredmethods="30"/>
-      <file name="useCart.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\hooks\useCart.ts">
+      <file name="useCart.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/hooks/useCart.ts">
         <metrics statements="10" coveredstatements="10" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -415,7 +415,7 @@
         <line num="18" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="20" count="3" type="stmt"/>
       </file>
-      <file name="useCategories.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\hooks\useCategories.ts">
+      <file name="useCategories.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/hooks/useCategories.ts">
         <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -432,7 +432,7 @@
         <line num="20" count="4" type="stmt"/>
         <line num="26" count="7" type="stmt"/>
       </file>
-      <file name="useDebounce.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\hooks\useDebounce.ts">
+      <file name="useDebounce.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/hooks/useDebounce.ts">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -442,7 +442,7 @@
         <line num="8" count="3" type="stmt"/>
         <line num="11" count="4" type="stmt"/>
       </file>
-      <file name="useDistricts.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\hooks\useDistricts.ts">
+      <file name="useDistricts.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/hooks/useDistricts.ts">
         <metrics statements="20" coveredstatements="15" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
@@ -465,7 +465,7 @@
         <line num="33" count="2" type="stmt"/>
         <line num="36" count="1" type="stmt"/>
       </file>
-      <file name="useLocalStorage.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\hooks\useLocalStorage.ts">
+      <file name="useLocalStorage.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/hooks/useLocalStorage.ts">
         <metrics statements="13" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
         <line num="1" count="10" type="stmt"/>
         <line num="3" count="10" type="stmt"/>
@@ -481,7 +481,7 @@
         <line num="18" count="0" type="stmt"/>
         <line num="22" count="24" type="stmt"/>
       </file>
-      <file name="useModal.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\hooks\useModal.ts">
+      <file name="useModal.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/hooks/useModal.ts">
         <metrics statements="10" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -494,7 +494,7 @@
         <line num="15" count="1" type="stmt"/>
         <line num="18" count="5" type="stmt"/>
       </file>
-      <file name="useProductSearch.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\hooks\useProductSearch.ts">
+      <file name="useProductSearch.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/hooks/useProductSearch.ts">
         <metrics statements="15" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="5"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -512,7 +512,7 @@
         <line num="26" count="1" type="stmt"/>
         <line num="32" count="6" type="stmt"/>
       </file>
-      <file name="useProducts.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\hooks\useProducts.ts">
+      <file name="useProducts.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/hooks/useProducts.ts">
         <metrics statements="18" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -533,7 +533,7 @@
         <line num="25" count="3" type="stmt"/>
         <line num="28" count="8" type="stmt"/>
       </file>
-      <file name="useResponsive.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\hooks\useResponsive.ts">
+      <file name="useResponsive.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/hooks/useResponsive.ts">
         <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="4"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="cond" truecount="1" falsecount="0"/>
@@ -550,7 +550,7 @@
     </package>
     <package name="logic">
       <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-      <file name="productFilter.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\logic\productFilter.ts">
+      <file name="productFilter.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/logic/productFilter.ts">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
@@ -561,7 +561,7 @@
     </package>
     <package name="pages.checkout">
       <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
-      <file name="checkout.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\pages\checkout\checkout.tsx">
+      <file name="checkout.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/pages/checkout/checkout.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -576,7 +576,7 @@
     </package>
     <package name="pages.home">
       <metrics statements="17" coveredstatements="17" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <file name="home.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\pages\home\home.tsx">
+      <file name="home.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/pages/home/home.tsx">
         <metrics statements="17" coveredstatements="17" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -599,7 +599,7 @@
     </package>
     <package name="pages.login">
       <metrics statements="22" coveredstatements="13" conditionals="3" coveredconditionals="1" methods="4" coveredmethods="1"/>
-      <file name="login.tsx" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\pages\login\login.tsx">
+      <file name="login.tsx" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/pages/login/login.tsx">
         <metrics statements="22" coveredstatements="13" conditionals="3" coveredconditionals="1" methods="4" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -627,7 +627,7 @@
     </package>
     <package name="proxy">
       <metrics statements="28" coveredstatements="23" conditionals="5" coveredconditionals="2" methods="3" coveredmethods="2"/>
-      <file name="auth.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\proxy\auth.ts">
+      <file name="auth.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/proxy/auth.ts">
         <metrics statements="6" coveredstatements="1" conditionals="3" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -636,7 +636,7 @@
         <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="15" count="0" type="stmt"/>
       </file>
-      <file name="fetchCategories.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\proxy\fetchCategories.ts">
+      <file name="fetchCategories.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/proxy/fetchCategories.ts">
         <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="2" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
@@ -650,7 +650,7 @@
         <line num="14" count="3" type="stmt"/>
         <line num="15" count="3" type="stmt"/>
       </file>
-      <file name="fetchProducts.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\proxy\fetchProducts.ts">
+      <file name="fetchProducts.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/proxy/fetchProducts.ts">
         <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="2" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
@@ -667,12 +667,12 @@
     </package>
     <package name="proxy.mapper">
       <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="3" methods="2" coveredmethods="2"/>
-      <file name="mapperGetCategories.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\proxy\mapper\mapperGetCategories.ts">
+      <file name="mapperGetCategories.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/proxy/mapper/mapperGetCategories.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="3" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
       </file>
-      <file name="mapperGetProduct.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\proxy\mapper\mapperGetProduct.ts">
+      <file name="mapperGetProduct.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/proxy/mapper/mapperGetProduct.ts">
         <metrics statements="2" coveredstatements="2" conditionals="6" coveredconditionals="3" methods="1" coveredmethods="1"/>
         <line num="4" count="3" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
@@ -680,14 +680,14 @@
     </package>
     <package name="utils">
       <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
-      <file name="discount.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\utils\discount.ts">
+      <file name="discount.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/utils/discount.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="4" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
         <line num="3" count="5" type="stmt"/>
         <line num="4" count="5" type="stmt"/>
       </file>
-      <file name="truncateText.ts" path="C:\Users\USER\Desktop\BOOTCAMP-FRONTEND-REACT-NTT\miniMarket\src\utils\truncateText.ts">
+      <file name="truncateText.ts" path="/Users/maxcm/Desktop/React/Susan Ojeda/miniMarket/src/utils/truncateText.ts">
         <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="2" count="4" type="stmt"/>
         <line num="3" count="4" type="cond" truecount="1" falsecount="0"/>
