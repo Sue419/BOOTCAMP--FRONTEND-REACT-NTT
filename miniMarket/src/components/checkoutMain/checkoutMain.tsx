@@ -1,3 +1,4 @@
+// falta test
 import { FC } from "react";
 import SummaryCart from "../SummaryCart/summaryCart";
 import CheckoutForm from "../checkoutForm/Form";
