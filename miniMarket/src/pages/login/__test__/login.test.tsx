@@ -1,3 +1,4 @@
+// este test no representa toda la funcionalidad del comonente login.tsx
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { AppRoutes } from "@/constants/routes";
