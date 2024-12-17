@@ -1,5 +1,5 @@
 import React from 'react';
-import './input.css'
+import style from "./input.module.css"
 
 interface InputProps {
     id: string;
@@ -13,10 +13,10 @@ interface InputProps {
 
 const Input: React.FC<InputProps> = ({ label, type, value, onChange, errorMessage }) => {
   return (
-    <div className="input-field">
+    <div className={style["input-field"]}>
       <label>{label}</label>
-      <input type={type} value={value} onChange={onChange} className="input" />
-      {errorMessage && <p className="error">{errorMessage}</p>}
+      <input type={type} value={value} onChange={onChange} className={style["input"]} />
+      {errorMessage && <p className={style["error"]}>{errorMessage}</p>}
     </div>
   );
 };

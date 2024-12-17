@@ -3,7 +3,6 @@
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
-  margin-bottom: 1rem;
 }
 
 /* Estilo para las etiquetas */
@@ -52,6 +51,5 @@
 
   .input-field {
     max-width: 400px;
-    margin-bottom: 1.5rem;
   }
 }

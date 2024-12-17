@@ -8,7 +8,7 @@ import { validateLoginForm, handleLoginRequest } from '@/logic/validateLoginForm
 import { emailRegex } from '@/constants/regexValidators';
 import { AppRoutes } from '@/constants/routes';
 import Modal from '@/components/shared/modal/modal';
-import './login.css'
+import style from './login.module.css'
 
 const LoginPage: FC = () => {
   const [username, setUsername] = useState('');
@@ -70,13 +70,13 @@ const LoginPage: FC = () => {
   };
 
   return (
-    <div className="login">
-      <div className="login__logo">
+    <div className={style["login"]}>
+      <div className={style["login__logo"]}>
           <img src="./src/assets/images/logo/white_logo.svg" alt="Logo de My Market" />
-          <h1 className='login__logo__title'>My Market</h1>
+          <h1 className={style['login__logo__title']}>My Market</h1>
       </div>
-      <h2 className="login__title">Login</h2>
-      <form className="login__form" onSubmit={handleLogin}>
+      <h2 className={style["login__title"]}>Login</h2>
+      <form className={style["login__form"]} onSubmit={handleLogin}>
         <Input
           id="username"
           label="Username"
@@ -84,7 +84,7 @@ const LoginPage: FC = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           errorMessage={errorUsername}
-          className="login__input"
+          className={style["login__input"]}
         />
         <Input
           id="password"
@@ -93,14 +93,14 @@ const LoginPage: FC = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           errorMessage={errorPassword}
-          className="login__input"
+          className={style["login__input"]}
         />
-        {errorMessage && <p className="login__error-message">{errorMessage}</p>}
-        <Button onClick={handleLogin} className="login__button" role="submit">
+        {errorMessage && <p className={style["login__error-message"]}>{errorMessage}</p>}
+        <Button onClick={handleLogin} className={style["login__button"]} role="submit">
           Login
         </Button>
       </form>
-      <div className="login__forgot-password">
+      <div className={style["login__forgot-password"]}>
         <a href="#" onClick={openResetModal}>
           Forgot Password?
         </a>
@@ -108,16 +108,17 @@ const LoginPage: FC = () => {
 
       <Modal isVisible={showResetModal} onClose={closeResetModal} title="Reset Password">
         <input
-          className="login__reset-input"
+          className={style["login__reset-input"]}
           type="email"
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <button className="login__reset-button" onClick={handleResetPassword}>
+        {resetErrorMessage && <p className={style["login__error-message"]}>{resetErrorMessage}</p>}
+        <button className={style["login__reset-button"]} onClick={handleResetPassword}>
           Send Reset Link
         </button>
-        {resetErrorMessage && <p className="login__error-message">{resetErrorMessage}</p>}
+        
       </Modal>
 
       <Modal isVisible={showSuccessModal} onClose={closeSuccessModal} title="Password Reset Sent">

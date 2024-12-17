@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import './modal.css'
+import style from "./modal.module.css"
 
 interface ModalProps {
   isVisible: boolean;
@@ -12,11 +12,11 @@ const Modal: FC<ModalProps> = ({ isVisible, onClose, title, children }) => {
   if (!isVisible) return null;
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
+    <div className={style["modal-overlay"]}>
+      <div className={style["modal-content"]}>
         <h2>{title}</h2>
         <div>{children}</div>
-        <button onClick={onClose} className="modal-close-button">Close</button>
+        <button onClick={onClose} className={style["modal-close-button"]}>Close</button>
       </div>
     </div>
   );
