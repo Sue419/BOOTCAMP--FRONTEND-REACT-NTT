@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDebounce } from "../../hooks/useDebounce";
-import "./searchBar.css";
+import style from "./searchBar.module.css"
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
@@ -24,7 +24,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch, id }) => {
   
 
   return (
-    <div className="search">
+    <div className={style["search"]}>
       <input
         role="textbox"
         type="search"
@@ -36,7 +36,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch, id }) => {
         onChange={handleInputChange}
         
       />
-      <button className="search-button" type="button">
+      <button className={style["search-button"]} type="button">
         <img src="./src/assets/icons/magnifying_glass.svg" alt="Buscar" />
       </button>
     </div>

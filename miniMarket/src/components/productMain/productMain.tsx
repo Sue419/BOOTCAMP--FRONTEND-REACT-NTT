@@ -1,6 +1,7 @@
 import { FC } from "react";
 import ProductList from "../productList/productList";
 import { Product } from "../../domain/product";
+import style from "./productMain.module.css"
 
 interface ProductMainProps {
   products: Product[];
@@ -9,7 +10,7 @@ interface ProductMainProps {
 
 const ProductMain: FC<ProductMainProps> = ({ products }) => {
   return (
-    <main className="main-container">
+    <main className={style["main-container"]}>
       <ProductList products={products} itemsPerPage={6} />
     </main>
   );

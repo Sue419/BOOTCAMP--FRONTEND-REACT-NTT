@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import './modalSuccess.css'
+import style from "./modalSuccess.module.css"
 
 interface ModalProps {
   isOpen: boolean;
@@ -12,11 +12,11 @@ const ModalSuccess: FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
+    <div className={style["modal-overlay"]}>
+      <div className={style["modal-content"]}>
         <h3>{title}</h3>
         <div>{children}</div>
-        <button onClick={onClose} className="close-button">
+        <button onClick={onClose} className={style["close-button"]}>
           Ok
         </button>
       </div>
