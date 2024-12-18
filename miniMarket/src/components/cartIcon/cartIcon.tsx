@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 import IconButton from "../shared/iconButton/iconButton";
 import { AppRoutes } from "@/constants/routes";
+import style from "./cartIcon.module.css"
 
 const CartIcon: FC = () => {
   const { cartCount } = useCart();
@@ -13,7 +14,7 @@ const CartIcon: FC = () => {
       <IconButton
         icon="./src/assets/icons/cart-shopping.svg"
         alt="Cart"
-        className="cart-icon"
+        className={style["cart-icon"]}
       >
         <span>{cartCount}</span>
       </IconButton>

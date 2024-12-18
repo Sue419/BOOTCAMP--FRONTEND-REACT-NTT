@@ -1,11 +1,12 @@
+/*estilos del dropdownSelect*/
 .dropdown {
     width: 100%;
     max-width: 50%;
     margin: 0 auto;
     padding: 0.5rem;
-}
-
-.dropdown-select {
+  }
+  
+  .dropdown-select {
     width: 100%;
     padding: 0.75rem 1rem;
     border: 1px solid var(--color-border);
@@ -16,14 +17,14 @@
     outline: none;
     cursor: pointer;
     transition: border-color 0.3s ease;
-}
-
-.dropdown-select:focus {
+  }
+  
+  .dropdown-select:focus {
     border-color: var(--color-primary);
     box-shadow: 0 0 4px var(--color-primary);
-}
-
-.dropdown-select option {
+  }
+  
+  .dropdown-select option {
     color: var(--color-text-secondary);
     padding: 0.5rem;
-}
+  }

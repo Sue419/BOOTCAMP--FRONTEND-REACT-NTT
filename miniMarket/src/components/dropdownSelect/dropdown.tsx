@@ -1,7 +1,6 @@
 import { FC } from "react";
-import { Category } from "@/domain/category";
-import CategorySelector from "../categorySelector/categorySelector";
-import './dropdown.css';
+import { Category } from "../../domain/category";
+import style from "./dropdown.module.css";
 
 interface CategoryDropdownProps {
   categories: Category[];
@@ -10,14 +9,20 @@ interface CategoryDropdownProps {
 }
 
 const CategoryDropdown: FC<CategoryDropdownProps> = ({ categories, selectedCategory, onCategorySelect }) => {
-
   return (
-    <CategorySelector
-      categories={categories}
-      onCategorySelect={onCategorySelect}
-      renderAs="dropdown"
-      selectedOption={selectedCategory}
-    />
+    <div className={style.dropdown}>
+      <select
+        className={style["dropdown-select"]}
+        value={selectedCategory}
+        onChange={(e) => onCategorySelect(e.target.value)}
+      >
+        {categories.map((category) => (
+          <option key={category.slug} value={category.slug}>
+            {category.name}
+          </option>
+        ))}
+      </select>
+    </div>
   );
 };
 

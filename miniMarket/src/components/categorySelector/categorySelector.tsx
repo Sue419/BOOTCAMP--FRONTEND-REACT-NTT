@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Category } from "../../domain/category";
+import CategoryDropdown from "../dropdownSelect/dropdown";
 
 interface CategorySelectorProps {
   categories: Category[];
@@ -8,40 +9,28 @@ interface CategorySelectorProps {
   isOpen?: boolean;
   toggleMenu?: () => void;
   selectedOption?: string;
-  orientation?: "horizontal" | "vertical";
 }
 
 const CategorySelector: FC<CategorySelectorProps> = ({
   categories,
   onCategorySelect,
   renderAs,
-  isOpen = false,
+  //isOpen = false,
   toggleMenu,
   selectedOption,
 }) => {
   if (renderAs === "dropdown") {
     return (
-      <div className="dropdown">
-        <select
-          className="dropdown-select"
-          value={selectedOption}
-          onChange={(e) => onCategorySelect(e.target.value)}
-        >
-          {categories.map((category) => (
-            <option key={category.slug} value={category.slug}>
-              {category.name}
-            </option>
-          ))}
-        </select>
-      </div>
+      <CategoryDropdown
+        categories={categories}
+        selectedCategory={selectedOption || ""}
+        onCategorySelect={onCategorySelect}
+      />
     );
   }
 
   return (
-    <div
-      className={`category-menu ${isOpen ? "open" : ""}`}
-      onClick={(e) => e.stopPropagation()}
-    >
+    <div className="category-menu">
       <ul className="category-list">
         {categories.map((category) => (
           <li
@@ -52,6 +41,7 @@ const CategorySelector: FC<CategorySelectorProps> = ({
                 toggleMenu();
               }
             }}
+            className="category-item"
           >
             {category.name}
           </li>
