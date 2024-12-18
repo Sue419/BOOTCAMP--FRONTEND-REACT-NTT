@@ -8,7 +8,7 @@ import { textRegex, numberRegex } from "@/constants/regexValidators";
 import useDistricts from "@/hooks/useDistricts";
 import { useCartActions } from "@/context/cart/cartAction";
 import { AppRoutes } from "@/constants/routes";
-import "./Form.css";
+import style from "./Form.module.css";
 
 interface FormData {
   name: string;
@@ -36,10 +36,8 @@ const CheckoutForm: FC = () => {
   const navigate = useNavigate();
 
   const { isModalVisible, openModal, closeModal } = useModal();
-  const { districts} = useDistricts();
+  const { districts } = useDistricts();
 
-
-  // falta tipar para permitir solo las keys necesarias
   const [formData, setFormData] = useState<FormData>({
     name: "",
     lastName: "",
@@ -49,7 +47,6 @@ const CheckoutForm: FC = () => {
     phone: "",
   });
 
-  // falta tipar para permitir solo las keys necesarias
   const [errors, setErrors] = useState<FormErrors>({
     name: "",
     lastName: "",
@@ -66,7 +63,7 @@ const CheckoutForm: FC = () => {
       district: "",
       address: "",
       reference: "",
-      phone: ""
+      phone: "",
     };
 
     if (!formData.name.trim()) {
@@ -103,18 +100,17 @@ const CheckoutForm: FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-  
+
     if (validate()) {
       console.log("Order submitted:", formData);
-  
+
       openModal();
-  
+
       if (cartState && cartDispatch) {
         clearCart();
       }
     }
   };
-  
 
   const handleCloseModal = () => {
     closeModal();
@@ -122,32 +118,32 @@ const CheckoutForm: FC = () => {
   };
 
   return (
-    <div className="checkout-form">
+    <div className={style["checkout-form"]}>
       <h2>Shipping Form</h2>
-      <form className="form-checkout" onSubmit={handleSubmit}>
-        <div className="input-group-form">
-          <label htmlFor="name" className="checkout-form-label">
+      <form className={style["form-checkout"]} onSubmit={handleSubmit}>
+        <div className={style["input-group-form"]}>
+          <label htmlFor="name" className={style["checkout-form-label"]}>
             Name
           </label>
           <input
             type="text"
-            className="checkout-form-input"
+            className={style["checkout-form-input"]}
             id="name"
             name="name"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             placeholder="Name"
           />
-          {errors.name && <div className="error">{errors.name}</div>}
+          {errors.name && <div className={style["error"]}>{errors.name}</div>}
         </div>
 
-        <div className="input-group-form">
-          <label htmlFor="lastName" className="checkout-form-label">
+        <div className={style["input-group-form"]}>
+          <label htmlFor="lastName" className={style["checkout-form-label"]}>
             Last Name
           </label>
           <input
             type="text"
-            className="checkout-form-input"
+            className={style["checkout-form-input"]}
             id="lastName"
             name="lastName"
             value={formData.lastName}
@@ -156,37 +152,37 @@ const CheckoutForm: FC = () => {
             }
             placeholder="Last Name"
           />
-          {errors.lastName && <div className="error">{errors.lastName}</div>}
+          {errors.lastName && <div className={style["error"]}>{errors.lastName}</div>}
         </div>
 
-        <div className="input-group-form">
-          <label htmlFor="district" className="checkout-form-label">
+        <div className={style["input-group-form"]}>
+          <label htmlFor="district" className={style["checkout-form-label"]}>
             District
           </label>
           <select
-              id="district"
-              name="district"
-              value={formData.district}
-              onChange={(e) => setFormData({ ...formData, district: e.target.value })}
-              className="checkout-form-input"
-            >
-              <option value="">Select a district</option>
-              {districts.map((district) => (
-                <option key={district.id} value={district.name}>
-                  {district.name}
-                </option>
-              ))}
-            </select>
-          {errors.district && <div className="error">{errors.district}</div>}
+            id="district"
+            name="district"
+            value={formData.district}
+            onChange={(e) => setFormData({ ...formData, district: e.target.value })}
+            className={style["checkout-form-input"]}
+          >
+            <option value="">Select a district</option>
+            {districts.map((district) => (
+              <option key={district.id} value={district.name}>
+                {district.name}
+              </option>
+            ))}
+          </select>
+          {errors.district && <div className={style["error"]}>{errors.district}</div>}
         </div>
 
-        <div className="input-group-form">
-          <label htmlFor="address" className="checkout-form-label">
+        <div className={style["input-group-form"]}>
+          <label htmlFor="address" className={style["checkout-form-label"]}>
             Address
           </label>
           <input
             type="text"
-            className="checkout-form-input"
+            className={style["checkout-form-input"]}
             id="address"
             name="address"
             value={formData.address}
@@ -195,16 +191,16 @@ const CheckoutForm: FC = () => {
             }
             placeholder="Address"
           />
-          {errors.address && <div className="error">{errors.address}</div>}
+          {errors.address && <div className={style["error"]}>{errors.address}</div>}
         </div>
 
-        <div className="input-group-form">
-          <label htmlFor="reference" className="checkout-form-label">
+        <div className={style["input-group-form"]}>
+          <label htmlFor="reference" className={style["checkout-form-label"]}>
             Reference
           </label>
           <input
             type="text"
-            className="checkout-form-input"
+            className={style["checkout-form-input"]}
             id="reference"
             name="reference"
             value={formData.reference}
@@ -213,16 +209,16 @@ const CheckoutForm: FC = () => {
             }
             placeholder="Reference"
           />
-          {errors.reference && <div className="error">{errors.reference}</div>}
+          {errors.reference && <div className={style["error"]}>{errors.reference}</div>}
         </div>
 
-        <div className="input-group-form">
-          <label htmlFor="phone" className="checkout-form-label">
+        <div className={style["input-group-form"]}>
+          <label htmlFor="phone" className={style["checkout-form-label"]}>
             Phone
           </label>
           <input
             type="text"
-            className="checkout-form-input"
+            className={style["checkout-form-input"]}
             id="phone"
             name="phone"
             value={formData.phone}
@@ -231,10 +227,10 @@ const CheckoutForm: FC = () => {
             }
             placeholder="Phone"
           />
-          {errors.phone && <div className="error">{errors.phone}</div>}
+          {errors.phone && <div className={style["error"]}>{errors.phone}</div>}
         </div>
 
-        <Button type="submit" className="checkout-form-submit">
+        <Button type="submit" className={style["checkout-form-submit"]}>
           Submit
         </Button>
       </form>

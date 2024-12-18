@@ -9,7 +9,6 @@ const Checkout: FC = () => {
   const { categories } = useCategories();
 
   return (
-    <div>
       <CartProvider>
         <Header
           onSearch={() => {}}
@@ -20,7 +19,6 @@ const Checkout: FC = () => {
         <CheckoutMain />
         <Footer />
       </CartProvider>
-    </div>
   );
 };
 

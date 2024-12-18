@@ -1,6 +1,6 @@
 import { useCartActions } from "@/context/cart/cartAction"; 
 import { calculateDiscountedPrice } from "../../utils/discount";
-import "./sumaryCart.css";
+import style from "./sumaryCart.module.css";
 
 const SummaryCart = () => {
   const { cart, incrementQuantity, decrementQuantity, removeFromCart } = useCartActions();
@@ -14,11 +14,11 @@ const SummaryCart = () => {
   );
 
   return (
-    <div className="summarycart-container">
-      <h1 className="summarycart-title" role="heading">Shopping Cart Summary</h1>
+    <div className={style["summarycart-container"]}>
+      <h1 className={style["summarycart-title"]} role="heading">Shopping Cart Summary</h1>
 
-      <div className="summarycart-table-container">
-        <table className="desktop-table">
+      <div className={style["summarycart-table-container"]}>
+        <table className={style["desktop-table"]}>
           <thead>
             <tr>
               <th>Product</th>
@@ -35,14 +35,14 @@ const SummaryCart = () => {
                   <img
                     src={product.image[0]}
                     alt={product.title}
-                    className="summarycart-product-image"
+                    className={style["summarycart-product-image"]}
                   />
                 </td>
                 <td>{product.title}</td>
                 <td>
-                  <div className="summarycart-item-quantity-desktop">
+                  <div className={style["summarycart-item-quantity-desktop"]}>
                     <button
-                      className="quantity-button"
+                      className={style["quantity-button"]}
                       onClick={() => decrementQuantity(product.id)}
                       data-testid={`decrement-button-desktop-${product.id}`}
                     >
@@ -50,7 +50,7 @@ const SummaryCart = () => {
                     </button>
                     {product.quantity}
                     <button
-                      className="quantity-button"
+                      className={style["quantity-button"]}
                       data-testid={`increment-button-desktop-${product.id}`}
                       onClick={() => incrementQuantity(product.id)}
                     >
@@ -67,7 +67,7 @@ const SummaryCart = () => {
                 </td>
                 <td>
                   <button
-                    className="remove-button"
+                    className={style["remove-button"]}
                     onClick={() => removeFromCart(product.id)}
                     data-testid={`remove-button-desktop-${product.id}`}
                   >
@@ -79,19 +79,19 @@ const SummaryCart = () => {
           </tbody>
         </table>
 
-        <div className="mobile-cart">
+        <div className={style["mobile-cart"]}>
           {cart.map((product) => (
-            <div key={product.id} className="summarycart-item">
-              <div className="summarycart-item-top">
-                <div className="summarycart-item-image">
+            <div key={product.id} className={style["summarycart-item"]}>
+              <div className={style["summarycart-item-top"]}>
+                <div className={style["summarycart-item-image"]}>
                   <img src={product.image[0]} alt={product.title} />
                 </div>
-                <div className="summarycart-item-title">
+                <div className={style["summarycart-item-title"]}>
                   <p>{product.title}</p>
                 </div>
-                <div className="summarycart-item-remove">
+                <div className={style["summarycart-item-remove"]}>
                   <button
-                    className="remove-button"
+                    className={style["remove-button"]}
                     onClick={() => removeFromCart(product.id)}
                     data-testid={`remove-button-mobile-${product.id}`}
                   >
@@ -99,10 +99,10 @@ const SummaryCart = () => {
                   </button>
                 </div>
               </div>
-              <div className="summarycart-item-bottom">
-                <div className="summarycart-item-quantity">
+              <div className={style["summarycart-item-bottom"]}>
+                <div className={style["summarycart-item-quantity"]}>
                   <button
-                    className="quantity-button"
+                    className={style["quantity-button"]}
                     onClick={() => decrementQuantity(product.id)}
                     data-testid={`decrement-button-mobile-${product.id}`}
                   >
@@ -110,14 +110,14 @@ const SummaryCart = () => {
                   </button>
                   {product.quantity}
                   <button
-                    className="quantity-button"
+                    className={style["quantity-button"]}
                     onClick={() => incrementQuantity(product.id)}
                     data-testid={`increment-button-mobile-${product.id}`}
                   >
                     +
                   </button>
                 </div>
-                <div className="summarycart-item-price">
+                <div className={style["summarycart-item-price"]}>
                   <span>
                     $
                     {calculateDiscountedPrice(
@@ -132,7 +132,7 @@ const SummaryCart = () => {
         </div>
       </div>
 
-      <div className="summarycart-total">Total: ${total.toFixed(2)}</div>
+      <div className={style["summarycart-total"]}>Total: ${total.toFixed(2)}</div>
     </div>
   );
 };
