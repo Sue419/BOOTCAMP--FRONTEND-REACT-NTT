@@ -96,15 +96,18 @@ const LoginPage: FC = () => {
           className={style["login__input"]}
         />
         {errorMessage && <p className={style["login__error-message"]}>{errorMessage}</p>}
+
+        <div className={style["login__forgot-password"]}>
+          <a href="#" onClick={openResetModal}>
+            Forgot Password?
+          </a>
+        </div>
+
         <Button onClick={handleLogin} className={style["login__button"]} role="submit">
           Login
         </Button>
       </form>
-      <div className={style["login__forgot-password"]}>
-        <a href="#" onClick={openResetModal}>
-          Forgot Password?
-        </a>
-      </div>
+      
 
       <Modal isVisible={showResetModal} onClose={closeResetModal} title="Reset Password">
         <input
