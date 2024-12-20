@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component matches the snapshot 1`] = `
+<DocumentFragment>
+  <footer
+    class="footer-container"
+  >
+    <div
+      class="footer-content"
+    >
+      <div
+        class="footer-logo-content"
+      >
+        <div
+          class="footer-logo"
+        >
+          <img
+            alt="Logo de My Market"
+            src="./src/assets/images/logo/white_logo.svg"
+          />
+          <h2>
+            My Market
+          </h2>
+        </div>
+        <p>
+          Calidad siempre a tu alcance
+        </p>
+      </div>
+      <div
+        class="footer-links"
+      >
+        <h3>
+          Información
+        </h3>
+        <ul>
+          <li>
+            <a
+              href="#"
+            >
+              Política de privacidad
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+            >
+              Términos de uso
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+            >
+              Contacto
+            </a>
+          </li>
+        </ul>
+      </div>
+      <section
+        class="footer-social-media"
+      >
+        <h3>
+          Síguenos en nuestras redes sociales
+        </h3>
+        <div
+          class="social-media"
+        >
+          <a
+            aria-label="Síguenos en X"
+            href="#"
+          >
+            <img
+              alt="Twitter"
+              src="./src/assets/icons/x_twitter.svg"
+            />
+          </a>
+          <a
+            aria-label="Síguenos en Instagram"
+            href="#"
+          >
+            <img
+              alt="Instagram"
+              src="./src/assets/icons/instagram.svg"
+            />
+          </a>
+          <a
+            aria-label="Síguenos en TikTok"
+            href="#"
+          >
+            <img
+              alt="TikTok"
+              src="./src/assets/icons/tiktok.svg"
+            />
+          </a>
+        </div>
+      </section>
+    </div>
+    <section
+      class="footer-copy"
+    >
+      <p>
+        © 2024 My Market. Todos los derechos reservados.
+      </p>
+    </section>
+  </footer>
+</DocumentFragment>
+`;

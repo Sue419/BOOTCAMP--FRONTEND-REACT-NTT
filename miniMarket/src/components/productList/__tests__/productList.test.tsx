@@ -30,7 +30,7 @@ describe('ProductList', () => {
   it('should render a list of products', () => {
     render(
       <CartProvider>
-        <ProductList products={products} />
+        <ProductList products={products} itemsPerPage={6} />
       </CartProvider>
     );
 
@@ -42,7 +42,7 @@ describe('ProductList', () => {
   it('should display "No products found" when the product list is empty', () => {
     render(
       <CartProvider>
-        <ProductList products={[]} />
+        <ProductList products={[]} itemsPerPage={6} />
       </CartProvider>
     );
     expect(screen.getByText('No products found.')).toBeInTheDocument();
