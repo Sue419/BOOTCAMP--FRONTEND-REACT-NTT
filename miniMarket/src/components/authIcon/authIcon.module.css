@@ -1,0 +1,44 @@
+.user-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: none;
+    border: none;
+  }
+  
+  .user-icon img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+  }
+  
+  .user-menu {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background-color: var(--color-bg-light);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 0.5rem;
+    z-index: 20;
+  }
+  
+  .user-menu button {
+    background-color: var(--color-bg-gray);
+    color: var(--color-primary);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    display: block;
+  }
+  
+  .user-menu button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+  }

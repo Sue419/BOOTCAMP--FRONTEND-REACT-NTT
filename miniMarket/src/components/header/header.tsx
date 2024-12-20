@@ -29,7 +29,7 @@ const Header: FC<HeaderProps> = ({
   isSticky = false,
 }) => {
   const isMobile = useResponsive(768);
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
 
   const [selectedCategory, setSelectedCategory] = useState(DEFAULT_CATEGORY);
 
@@ -48,14 +48,6 @@ const Header: FC<HeaderProps> = ({
     setUiState((prev) => ({ ...prev, isSidebarOpen: !prev.isSidebarOpen }));
   };
 
-  const toggleUserMenu = () => {
-    setUiState((prev) => ({ ...prev, isUserMenuOpen: !prev.isUserMenuOpen }));
-  };
-
-  const handleLogout = () => {
-    logout();
-  };
-
   return (
     <header
       className={`${style["header-container"]} ${
@@ -71,6 +63,7 @@ const Header: FC<HeaderProps> = ({
               className={style["menu-button"]}
               onClick={toggleSidebar}
               role="button"
+              aria-label="Toggle Sidebar Menu"
             >
               &#9776;
             </button>
@@ -103,21 +96,8 @@ const Header: FC<HeaderProps> = ({
 
           <p className={style["user-name"]}>{`Hi, ${user?.firstName}!`}</p>
           <div className={style["icons"]}>
-            
-
             <CartIcon />
-            {user ? (
-              <div className={style["user-icon"]} onClick={toggleUserMenu}>
-                <img src="./src/assets/icons/user.svg" alt="Usuario" />
-                {uiState.isUserMenuOpen && (
-                  <div className={style["user-menu"]}>
-                    <button onClick={handleLogout}>Cerrar sesión</button>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <AuthIcon />
-            )}
+            <AuthIcon />
           </div>
         </div> 
           
