@@ -28,6 +28,7 @@ const HomePage: FC = () => {
         onCategoryChange={handleCategoryChange}
         categories={categories}
         isCheckoutPage={false}
+        isSticky={true}
       />
       <ProductMain products={filteredProducts} role="main"/>
       <Footer />

@@ -15,6 +15,7 @@ const Checkout: FC = () => {
           onCategoryChange={() => {}}
           categories={categories}
           isCheckoutPage={true}
+          isSticky={false}
         />
         <CheckoutMain />
         <Footer />

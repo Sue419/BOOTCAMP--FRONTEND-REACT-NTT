@@ -1,5 +1,6 @@
 import { FC, useState, useEffect, useRef } from "react";
 import CategorySelector from "../categorySelector/categorySelector";
+import { useAuth } from "@/hooks/useAuth";
 import style from "./sidebar.module.css";
 import { Button } from "../shared/button/button";
 
@@ -16,6 +17,7 @@ const Sidebar: FC<SidebarProps> = ({
   onCategorySelect,
   categories,
 }) => {
+  const { user} = useAuth();
   const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);
   const sidebarRef = useRef<HTMLDivElement | null>(null);
 
@@ -66,7 +68,7 @@ const Sidebar: FC<SidebarProps> = ({
           onClick={(e) => e.stopPropagation()}
         >
           <div className={style["sidebar-header"]}>
-            <span>¡Hola!</span>
+            <span> <p className={style["user-name"]}>{`Hi, ${user?.firstName}!`}</p></span>
             <Button className={style["close-button"]} onClick={closeSidebar}>
               &#10005;
             </Button>

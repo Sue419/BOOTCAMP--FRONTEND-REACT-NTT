@@ -11,14 +11,29 @@ interface InputProps {
     errorMessage?: string;
 }
 
-const Input: React.FC<InputProps> = ({ label, type, value, onChange, errorMessage }) => {
+const Input: React.FC<InputProps> = ({ 
+  id, 
+  label, 
+  type, 
+  value, 
+  onChange, 
+  errorMessage, 
+  className = "" 
+}) => {
   return (
-    <div className={style["input-field"]}>
-      <label>{label}</label>
-      <input type={type} value={value} onChange={onChange} className={style["input"]} />
+    <div className={`${style["input-field"]} ${className}`}>
+      <label htmlFor={id}>{label}</label>
+      <input 
+        id={id}
+        type={type} 
+        value={value} 
+        onChange={onChange} 
+        className={style["input"]} 
+      />
       {errorMessage && <p className={style["error"]}>{errorMessage}</p>}
     </div>
   );
 };
+
 
 export default Input;
