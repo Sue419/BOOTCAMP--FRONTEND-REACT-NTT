@@ -133,6 +133,7 @@ const CheckoutForm: FC = () => {
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             placeholder="Name"
+            data-testid="name-input"
           />
           {errors.name && <div className={style["error"]}>{errors.name}</div>}
         </div>
@@ -151,6 +152,7 @@ const CheckoutForm: FC = () => {
               setFormData({ ...formData, lastName: e.target.value })
             }
             placeholder="Last Name"
+            data-testid="lastname-input"
           />
           {errors.lastName && <div className={style["error"]}>{errors.lastName}</div>}
         </div>
@@ -162,6 +164,7 @@ const CheckoutForm: FC = () => {
           <select
             id="district"
             name="district"
+            data-testid="district-select"
             value={formData.district}
             onChange={(e) => setFormData({ ...formData, district: e.target.value })}
             className={style["checkout-form-input"]}
@@ -190,6 +193,7 @@ const CheckoutForm: FC = () => {
               setFormData({ ...formData, address: e.target.value })
             }
             placeholder="Address"
+            data-testid="address-input"
           />
           {errors.address && <div className={style["error"]}>{errors.address}</div>}
         </div>
@@ -208,6 +212,7 @@ const CheckoutForm: FC = () => {
               setFormData({ ...formData, reference: e.target.value })
             }
             placeholder="Reference"
+            data-testid="reference-input"
           />
           {errors.reference && <div className={style["error"]}>{errors.reference}</div>}
         </div>
@@ -226,6 +231,7 @@ const CheckoutForm: FC = () => {
               setFormData({ ...formData, phone: e.target.value })
             }
             placeholder="Phone"
+            data-testid="phone-input"
           />
           {errors.phone && <div className={style["error"]}>{errors.phone}</div>}
         </div>

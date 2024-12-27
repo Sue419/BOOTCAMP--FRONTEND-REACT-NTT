@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.92% </span>
+                <span class="strong">78.57% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/13</span>
+                <span class='fraction'>11/14</span>
             </div>
         
             
@@ -89,58 +89,67 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">10x</span>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">35x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useEffect, useState } from 'react';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState } from "react";
 &nbsp;
-export const useLocalStorage = &lt;T&gt;(key: string, initialValue: T) =&gt; {
-  const [storedValue, setStoredValue] = useState&lt;T&gt;(() =&gt; {
+type UseLocalStorage&lt;T&gt; = {
+  storedValue: T;
+  setStoredValue: (value: T) =&gt; void;
+};
+&nbsp;
+export function useLocalStorage&lt;T&gt;(key: string, initialValue: T): UseLocalStorage&lt;T&gt; {
+  const [storedValue, setStoredValueState] = useState&lt;T&gt;(() =&gt; {
     try {
-      const item = window.localStorage.getItem(key);
+      const item = localStorage.getItem(key);
       return item ? (JSON.parse(item) as T) : initialValue;
     } catch (error) {
-<span class="cstat-no" title="statement not covered" >      console.error(`Error reading localStorage key "${key}":`, error);</span>
+<span class="cstat-no" title="statement not covered" >      console.error("Error reading localStorage key:", key, error);</span>
 <span class="cstat-no" title="statement not covered" >      return initialValue;</span>
     }
   });
 &nbsp;
-  useEffect(() =&gt; {
+  const setStoredValue = (value: T) =&gt; {
     try {
-      window.localStorage.setItem(key, JSON.stringify(storedValue));
+      setStoredValueState(value);
+      localStorage.setItem(key, JSON.stringify(value));
     } catch (error) {
-<span class="cstat-no" title="statement not covered" >      console.error(`Error setting localStorage key "${key}":`, error);</span>
+<span class="cstat-no" title="statement not covered" >      console.error("Error setting localStorage key:", key, error);</span>
     }
-  }, [key, storedValue]);
-&nbsp;
-  return {
-    storedValue,
-    setStoredValue,
   };
-};
+&nbsp;
+  return { storedValue, setStoredValue };
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -148,7 +157,7 @@ export const useLocalStorage = &lt;T&gt;(key: string, initialValue: T) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-02T03:54:30.142Z
+                at 2024-12-27T21:20:52.616Z
             </div>
         <script src="../prettify.js"></script>
         <script>
